@@ -6,7 +6,7 @@ import Modal from 'react-modal';
 const render = () => {
   return (<div className="logged-off-greeting">
     <div className="slogan">
-      <img src="https://c1.staticflickr.com/5/4380/36541394753_bb925e4c1c_o.png" />
+      <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png" />
       <h3>Helping you </h3>
       <h3>become a better you</h3>
 
