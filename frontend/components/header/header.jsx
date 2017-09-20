@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 
 const loggedin = (props) => {
@@ -9,7 +10,7 @@ const loggedin = (props) => {
       <p>HELLO {props.user.username}</p>
       <div className="divider2"></div>
       <ul className="login-ul-nav">
-      <Link to="#"><p>Home</p></Link>
+      <Link to="/home"><p>Home</p></Link>
       <Link to="#"><p>Train</p></Link>
       <Link to="#"><p>Explore</p></Link>
         <Link to="#"><p>Connect</p></Link>
