@@ -6,7 +6,7 @@ class Api::SessionsController < ApplicationController
       p "YOU GOT HERE"
       render "api/users/show"
     else
-      render json: "invalid login credentials"
+      render json: ["Invalid username/password"], status: 401
     end
   end
 
@@ -14,7 +14,7 @@ class Api::SessionsController < ApplicationController
     if current_user
       logout
     else
-      render :json => {:error => "Not Logged In"}.to_json, :status => 404
+      render json: ["Not Logged In"], status: 404
     end
   end
 end

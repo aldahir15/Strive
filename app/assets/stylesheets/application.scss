@@ -129,8 +129,9 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 80px;
+  padding: 0 80px;
   overflow: none;
+  text-align: center;
 }
 
 .submit-session {
@@ -147,6 +148,12 @@ body {
 .session-form-div {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+// Errors-Messages
+.errors-messages {
+
 }
 
 //LOGGED-OFF PAGE

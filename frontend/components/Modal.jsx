@@ -54,7 +54,7 @@ class AppModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <this.props.action />
+          <this.props.action text={text}/>
         </Modal>
       </div>
     );
