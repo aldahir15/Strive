@@ -44,4 +44,7 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
+
+  has_many :calendars
+  has_many :workouts
 end
