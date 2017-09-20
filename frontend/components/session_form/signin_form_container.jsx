@@ -4,7 +4,6 @@ import { login } from '../../actions/session_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     loggedIn: Boolean(state.session.currentUser),
     errors: state.errors.session
