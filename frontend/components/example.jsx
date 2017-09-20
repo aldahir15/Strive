@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import SessionFormContainer from './session_form/session_form_container';
+import SignInFormContainer from './session_form/signin_form_container';
 
 const customStyles = {
   content : {
@@ -52,7 +52,7 @@ class App extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <SessionFormContainer />
+          <SignInFormContainer />
         </Modal>
       </div>
     );
