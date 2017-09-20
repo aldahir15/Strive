@@ -11,6 +11,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const action = ownProps.location.pathname === "/login" ? login : signup;
   return {
+    logout: (userId) => dispatch(logout(userId)),
     action: (user) => dispatch(action(user)),
     type: ownProps.location.pathname.slice(1)
   };

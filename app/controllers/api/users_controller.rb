@@ -3,10 +3,15 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      render :show
+      p "YOU GOT HERE"
+      render "api/users/show"
     else
       render json: @user.errors.full_messages
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private

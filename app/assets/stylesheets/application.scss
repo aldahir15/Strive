@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// NAVBAR
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+//  Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Maker">LogoMaker.com</a> https://logomakr.com/66Luzl66Luzl
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url('run2.jpg');
+  background-position-y: 120px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+}
+
+.login-header, .logout-header {
+  height: 100px;
+  display: flex;
+  flex-direction: row-reverse;
+  background: white;
+}
+
+.login-header p, .logout-header p {
+  padding-top: 25px;
+  padding-right: 30px;
+}
+
+.myButton {
+  display: flex;
+	-moz-box-shadow:inset 0px 34px 0px -15px #fc4d02;
+	-webkit-box-shadow:inset 0px 34px 0px -15px #fc4d02;
+	box-shadow:inset 0px 34px 0px -15px #fc4d02;
+	background-color: #fc4d02;
+	display:inline-block;
+	cursor:pointer;
+	color: #ffffff;
+	font-family:Trebuchet MS;
+	font-size:20px;
+	font-weight:bold;
+	padding:20px 20px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+}
+.myButton:hover {
+	background-color:#fc4d02;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+.button {
+  display: flex;
+  font-family:Trebuchet MS;
+  font-size:20px;
+  text-decoration: none;
+  background-color: #fc4d02;
+  color: #ffffff;
+  margin-right: 20px;
+	padding:30px 30px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.signup-button {
+  display: flex;
+  font-family:Trebuchet MS;
+  font-size:20px;
+  text-decoration: none;
+  background-color: #fff;
+  color: black;
+  padding:30px 60px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+
+.divider{
+    width:350px;
+    height:auto;
+    display:inline-block;
+}
+
+.login-ul-nav {
+  display: flex;
+  margin: auto;
+  width: 60%;
+  height: 35%;
+  justify-content: space-between;
+}
+
+.login-ul-nav a {
+  font-size:20px;
+  text-decoration: none;
+  background-color: #fff;
+  color: black;
+  padding:0px 20px;
+}
+
+//LOGGED-OFF PAGE
+.logged-off-greeting {
+  margin-top: 10px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.logged-off-greeting img {
+  height: 7%;
+  width: 7%;
+  position: relative;
+  top: -70px;
+  left: -60px;
+}
+
+.logged-off-greeting h3{
+  color: white;
+  font-weight: bolder;
+  font-size: 300%;
+  line-height: 20%;
+}
+
+.slogan {
+  padding-top: 100px;
+  padding-left: 70px;
+}

@@ -1,20 +1,20 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Link, Switch } from 'react-router-dom';
-import LoggedOffGreetingContainer from './greeting/logged_off_greeting_container';
+import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
-import { requireLoginRoute } from '../util/autherization_util';
+import HeaderContainer from './header/header_container';
+import { Route } from 'react-router-dom';
+import {RequireLoginRoute, LoggedinRoute} from '../util/authorization_util';
 
 const App = () => {
   return (
     <div>
-      <Link to="/">
-        <h1>Strive</h1>
-      </Link>
-      <LoggedOffGreetingContainer />
+      <HeaderContainer />
+      <GreetingContainer />
       <Switch>
-        <requireLoginRoute path="/login" component={SessionFormContainer} />
-        <requireLoginRoute path="/signup" component={SessionFormContainer} />
+        <RequireLoginRoute path="/login" component={SessionFormContainer} />
+        <RequireLoginRoute path="/signup" component={SessionFormContainer} />
       </Switch>
     </div>
   );
