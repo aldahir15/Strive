@@ -32,7 +32,11 @@ class SessionForm extends React.Component {
   handleDemo(e){
     e.preventDefault();
     const user = {username: "demo", password: "password"};
-    this.props.action(user);
+    if (this.props.text === "Log In") {
+      this.props.action(user);
+    } else {
+      this.props.login(user);
+    }
   }
 
   showErrors() {
@@ -48,12 +52,10 @@ class SessionForm extends React.Component {
   }
 
   demoLogin(){
-    if (this.props.text === "Log In") {
       return(
       <button className="submit-session" onClick={this.handleDemo}>
         DEMO LOGIN
       </button>);
-    }
   }
 
   render(){

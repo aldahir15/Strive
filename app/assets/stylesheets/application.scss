@@ -80,6 +80,7 @@ body {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  cursor: pointer;
 }
 
 .signup-button {
@@ -94,6 +95,7 @@ body {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  cursor: pointer;
 }
 
 .divider{
@@ -149,6 +151,23 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.demo-button {
+  display: flex;
+  font-family:Trebuchet MS;
+  font-size:15px;
+  text-decoration: none;
+  background-color: grey;
+  color: #ffffff;
+  margin-right: 20px;
+  padding:5px 5px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  cursor: pointer;
+  height: 50%;
 }
 
 // Errors-Messages

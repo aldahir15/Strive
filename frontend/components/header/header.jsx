@@ -24,10 +24,12 @@ const loggedin = (props) => {
   );
 };
 
-const loggedout = () => {
+const loggedout = (props) => {
   return (
     <div className="login-header">
       <AppModal action={SigninFormContainer} className="button"/>
+      <button className="demo-button" onClick={() =>
+        props.login({username: "demo", password: "password"})}>Demo Login</button>
       <div className="divider"></div>
       <AppModal action={SignupFormContainer} className="signup-button"/>
       <p>HERE TO JOIN?</p>
@@ -36,7 +38,7 @@ const loggedout = () => {
 };
 
 const Greeting = (props) => {
-  return props.user ? loggedin(props) : loggedout();
+  return props.user ? loggedin(props) : loggedout(props);
 };
 
 export default Greeting;
