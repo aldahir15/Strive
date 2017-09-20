@@ -10,13 +10,14 @@ const customStyles = {
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
+    overflow              : 'none',
     transform             : 'translate(-50%, -50%)'
   }
 };
 
-class App extends React.Component {
-  constructor() {
-    super();
+class AppModal extends React.Component {
+  constructor(props) {
+    super(props);
 
     this.state = {
       modalIsOpen: false
@@ -32,8 +33,7 @@ class App extends React.Component {
   }
 
   afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    this.subtitle.style.color = '#f00';
+
   }
 
   closeModal() {
@@ -41,9 +41,11 @@ class App extends React.Component {
   }
 
   render() {
+    const text = this.props.action === SignInFormContainer ? "Log In" : "Sign Up";
+    const classN = this.props.action === SignInFormContainer ? "myButton" : "signup-button";
     return (
       <div>
-        <button onClick={this.openModal}>Open Modal</button>
+        <button onClick={this.openModal} className={classN}>{text}</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -52,11 +54,11 @@ class App extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <SignInFormContainer />
+          <this.props.action />
         </Modal>
       </div>
     );
   }
 }
 
-export default App;
+export default AppModal;

@@ -1,6 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+import AppModal from '../Modal';
+import SigninFormContainer from '../session_form/signin_form_container';
+import SignupFormContainer from '../session_form/signup_form_container';
+
 
 
 const loggedin = (props) => {
@@ -22,9 +27,9 @@ const loggedin = (props) => {
 const loggedout = () => {
   return (
     <div className="login-header">
-      <Link to="/login" className="button">Login</Link>
+      <AppModal action={SigninFormContainer} className="button"/>
       <div className="divider"></div>
-      <Link to="/signup" className="signup-button">Signup</Link>
+      <AppModal action={SignupFormContainer} className="signup-button"/>
       <p>HERE TO JOIN?</p>
     </div>
   );
