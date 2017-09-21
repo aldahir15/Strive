@@ -22,11 +22,12 @@ html, body {
 //  Check out the new logo that I created on <a href="http://logomakr.com" title="Logo Maker">LogoMaker.com</a> https://logomakr.com/66Luzl66Luzl
 body {
   font-family: 'Roboto', sans-serif;
-  background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
+  // background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
   background-position-y: 120px;
   background-size: 100%;
   background-repeat: no-repeat;
   overflow-x: hidden;
+  margin: 8px 8px 0 0;
 }
 
 .login-header, .logout-header {
@@ -34,6 +35,8 @@ body {
   display: flex;
   flex-direction: row-reverse;
   background: white;
+
+  border-bottom: 1px solid black;
 }
 
 .login-header p, .logout-header p {
@@ -108,7 +111,7 @@ body {
   display: flex;
   margin: auto;
   width: 60%;
-  height: 35%;
+  height: 65%;
   justify-content: space-between;
 }
 
@@ -176,14 +179,31 @@ body {
 }
 
 //LOGGED-OFF PAGE
-.logged-off-greeting {
-  margin-top: 10px;
-  font-family: 'Roboto Condensed', sans-serif;
+#root {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.logged-off-greeting img {
-  height: 7%;
-  width: 7%;
+
+.logged-off-greeting {
+  background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto Condensed', sans-serif;
+  // background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
+}
+
+.logged-off-greeting img{
+  height: 7% ;
+  width: 7% ;
   position: relative;
   top: -70px;
   left: -60px;
@@ -200,3 +220,5 @@ body {
   padding-top: 100px;
   padding-left: 70px;
 }
+
+// HOME PAGE

@@ -1,7 +1,7 @@
 export const fetchCalendar = id => {
   return $.ajax({
     method: 'GET',
-    url: '/api/calendars'
+    url: `/api/calendars/${id}`
   });
 };
 

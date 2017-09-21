@@ -1,4 +1,4 @@
-import { RECEIVE_CALENDAR, RECEIVE_CALENDAR_ERRORS } from '../actions/calendar_actions';
+import { RECEIVE_CALENDAR, RECEIVE_CALENDAR_ERRORS } from '../../actions/calendar_actions';
 
 export default (state = [], action) => {
   Object.freeze(state);
