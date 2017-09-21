@@ -24,7 +24,8 @@ class Calendar extends React.Component {
     if (this.props.day.workouts) {
       return(
         <ul className="home-workouts">
-          {this.props.day.workouts.map((workout) => <li>{workout.title}</li>)}
+          {this.props.day.workouts.map((workout) =>
+            <li>{`${workout.time} ${workout.dayornight}: ${workout.title}`}</li>)}
         </ul>
       );
     }
