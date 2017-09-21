@@ -56,11 +56,14 @@ class Calendar extends React.Component {
   render(){
     return(
       <div className="home">
-        <div className="home-calendar">
-          <h3>{this.dayOfWeek()}</h3>
-          <ul className="time-calendar">
-            {this.workouts()}
-          </ul>
+        <div className="day-calendar-container">
+          <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
+          <div className="home-calendar">
+            <h3>Calendar</h3>
+            <ul className="time-calendar">
+              {this.workouts()}
+            </ul>
+          </div>
         </div>
         {this.renderQuote()}
       </div>

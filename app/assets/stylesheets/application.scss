@@ -213,9 +213,12 @@ body {
 
 .logged-off-greeting h3{
   color: white;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bolder;
-  font-size: 300%;
+  font-size: 320%;
   line-height: 20%;
+  text-shadow: 1px 1px black;
+
 }
 
 .slogan {
@@ -225,14 +228,21 @@ body {
 
 // HOME PAGE
 
+.day-of-week {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+  font-size: 300%;
+  line-height: 20%;
+}
+
 .home-calendar {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 80px;
-  top: 40px;
+  left: 20px;
+  top: 10px;
   border: 1px solid black;
-  width: 30%;
+  width: 350px;
   border-radius: 8%;
   text-align: center;
   list-style: none;
@@ -259,26 +269,35 @@ body {
 .home {
   display: flex;
   flex-direction: row;
-  height: 680px;
+  height: 700px;
   background-image: url(http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
-
-.home img {
-  // backg: 0.2;
+  // flex-wrap: wrap;
 }
 
 .quote-div {
   position: relative;
-  top: 30px;
-  left: 120px;
+  top: 70px;
+  left: 130px;
 }
 
 .quote-div h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 30px;
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 60%;
+}
+
+.day-calendar-container {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  position: relative;
+  top: 10px;
+  left: 50px;
 }
