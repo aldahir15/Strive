@@ -234,10 +234,47 @@ body {
   border-radius: 8%;
   text-align: center;
   list-style: none;
+  padding-bottom: 40px;
+  height: 550px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
+  background-color: rgba(245, 245, 245, 1);
 }
 
 .home-calendar ul{
+  position: relative;
+  left: -20px;
   list-style-type: none;
   display: inline-block;
   text-align:left;
+  line-height: 3;
+  font-size: 12px;
+}
+
+.home-calendar li{
+  border-bottom: 1px solid black;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  height: 700px;
+  background-image: url(http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.home img {
+  // backg: 0.2;
+}
+
+.quote-div {
+  position: relative;
+  top: 30px;
+  left: 120px;
+}
+
+.quote-div h1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
 }
