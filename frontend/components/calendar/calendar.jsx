@@ -8,7 +8,7 @@ class Calendar extends React.Component {
     super(props);
   }
 
-  componentWillMount(){
+  componentDidMount(){
     const day = new Date;
     this.props.fetchCalendar(day.getDate());
   }
@@ -20,13 +20,21 @@ class Calendar extends React.Component {
     return DAYS[today.getDay()];
   }
 
+  workouts(){
+    if (this.props.day.workouts) {
+      return(
+        <ul className="home-workouts">
+          {this.props.day.workouts.map((workout) => <li>{workout.title}</li>)}
+        </ul>
+      );
+    }
+  }
+
   render(){
-    console.log("DAY", this.props);
-    console.log("TODAY IS", this.dayOfWeek());
     return(
-      <div>
-        {this.dayOfWeek()}
-        {this.props.day.workouts}
+      <div className="home-calendar">
+        <h3>{this.dayOfWeek()}</h3>
+        {this.workouts()}
       </div>
     );
   }
