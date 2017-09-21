@@ -12,11 +12,11 @@ class Api::WorkoutsController < ApplicationController
   end
 
   def show
-    @workout = Calendar.find(params[:id])
+    @workout = Workout.find(params[:id])
   end
 
   def destroy
-    @workout = Calendar.find(params[:id])
+    @workout = Workout.find(params[:id])
     @workout.delete
   end
 

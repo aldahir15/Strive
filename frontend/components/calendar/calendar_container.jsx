@@ -5,7 +5,6 @@ import { fetchQuote } from '../../actions/quote_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
-  console.log("STATE", state);
   const day = state.calendar;
   const quote = state.quote;
   return {

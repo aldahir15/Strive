@@ -7,6 +7,10 @@ import HeaderContainer from './header/header_container';
 import { Route } from 'react-router-dom';
 import {RequireLoginRoute, LoggedinRoute} from '../util/authorization_util';
 import CalendarContainer from './calendar/calendar_container';
+import WorkoutContainer from './workouts/workouts_container';
+import WorkoutUpdateFormContainer from './workouts/workout_update_form_container';
+
+
 
 const App = () => {
   return (
@@ -17,6 +21,8 @@ const App = () => {
         <RequireLoginRoute path="/login" component={SessionFormContainer} />
         <RequireLoginRoute path="/signup" component={SessionFormContainer} />
         <LoggedinRoute path="/home" component={CalendarContainer} />
+        <LoggedinRoute exact path="/workouts/:workoutId" component={WorkoutContainer} />
+        <LoggedinRoute path="/workouts/:workoutId/edit" component={WorkoutUpdateFormContainer} />
       </Switch>
     </div>
   );

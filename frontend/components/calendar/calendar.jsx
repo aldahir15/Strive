@@ -7,11 +7,18 @@ class Calendar extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {quote: ""};
+    this.state = {quote: "", currentDate: ""};
   }
 
   componentDidMount(){
     const day = new Date;
+    const currDay = day.getDate();
+    const MONTHS = [ "Jan", "Feb", "Mar", "Apr",
+	   			    "May", "Jun", "July", "Aug",
+				    "Sep", "Oct", "Nov", "Dec"];
+    const currMonth = MONTHS[day.getMonth()];
+    const currYear = day.getFullYear();
+    this.setState({currentDate: `${currMonth} ${currDay}, ${currYear}`});
     this.props.fetchCalendar(day.getDate());
     this.getQuote();
   }
@@ -45,12 +52,15 @@ class Calendar extends React.Component {
       this.props.day.workouts.map((workout) => {
         const fulltime = `${workout.time} ${workout.dayornight}`;
         if (nums.includes(fulltime)) {
+          const sentence = `${workout.time} ${workout.dayornight}:  ${workout.title}`;
           nums[nums.indexOf(fulltime)] =
-          `${workout.time} ${workout.dayornight}:  ${workout.title}`;
+          <Link to={`workouts/${workout.id}`}>{sentence}</Link>;
         }
       });
     }
-    return nums.map((num) => (<li>{num}</li>));
+    return nums.map((num) => (
+      <li>{num}</li>
+    ));
   }
 
   render(){
@@ -59,7 +69,7 @@ class Calendar extends React.Component {
         <div className="day-calendar-container">
           <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
           <div className="home-calendar">
-            <h3>Calendar</h3>
+            <h3>{this.state.currentDate}</h3>
             <ul className="time-calendar">
               {this.workouts()}
             </ul>
