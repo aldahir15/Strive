@@ -386,3 +386,60 @@ body {
   background-color: grey;
   color: white;
 }
+// CALENDAR-INDEX
+
+.month {
+    padding: 5px 5px;
+    width: 100%;
+    text-align: left;
+}
+
+.daysL {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.daysL li {
+    display: inline-block;
+    width: 14%;
+    color: #grey;
+    text-align: center;
+}
+
+.daysN {
+    padding: 10px 0;
+    background: #eee;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.daysN li {
+    list-style-type: none;
+    display: inline-block;
+    width: 14%;
+    text-align: left;
+    height: 120px;
+    font-size:14px;
+    color:#777;
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+.active {
+    background: #0C69A4;
+    color: white !important
+}
+
+.workouts-within{
+  padding: 5px;
+}
+
+.workouts-within li {
+  text-align: left;
+  color: black;
+  list-style-type: lower-latin;
+  width: 100%;
+  border: 0;
+  height: auto;
+}

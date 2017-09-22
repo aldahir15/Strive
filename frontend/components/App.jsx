@@ -9,7 +9,7 @@ import {RequireLoginRoute, LoggedinRoute} from '../util/authorization_util';
 import CalendarContainer from './calendar/calendar_container';
 import WorkoutContainer from './workouts/workouts_container';
 import WorkoutUpdateFormContainer from './workouts/workout_update_form_container';
-
+import CalendarIndexContainer from './calendar/calendar_index_container';
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
         <LoggedinRoute path="/home" component={CalendarContainer} />
         <LoggedinRoute exact path="/workouts/:workoutId" component={WorkoutContainer} />
         <LoggedinRoute path="/workouts/:workoutId/edit" component={WorkoutUpdateFormContainer} />
-        <LoggedinRoute exact path="/train/" component={WorkoutContainer} />
+        <LoggedinRoute exact path="/train/" component={CalendarIndexContainer} />
 
       </Switch>
     </div>
