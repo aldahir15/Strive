@@ -11,6 +11,7 @@
 #  updated_at  :datetime         not null
 #  time        :integer
 #  dayornight  :string
+#  route_id    :integer
 #
 
 require 'test_helper'

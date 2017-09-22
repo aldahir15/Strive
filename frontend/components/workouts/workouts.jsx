@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import WorkoutModal from './WorkoutModal';
 import WorkoutUpdateFormContainer from './workout_update_form_container';
 import WorkoutCreateFormContainer from './workout_create_form_container';
+import GMap from '../map/Gmap';
+
 
 
 class Workouts extends React.Component {
@@ -38,6 +40,7 @@ class Workouts extends React.Component {
               Delete
             </button>
           </div>
+          <GMap />
         </div>
       );
     }
