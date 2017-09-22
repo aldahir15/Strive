@@ -61,8 +61,9 @@ class Calendar extends React.Component {
         }
       });
     }
+    console.log(nums);
     return nums.map((num) => (
-      <li key={num}>{num}</li>
+      <li key={nums.indexOf(num)}>{num}</li>
     ));
   }
 

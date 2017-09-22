@@ -24,11 +24,11 @@ class Api::CalendarsController < ApplicationController
   end
 
   def show
-    @calendar = Calendar.find_by_day(params[:id])
+    @calendar = Calendar.where(day: params[:id], user_id: current_user.id)[0]
   end
 
   def destroy
-    @calendar = Calendar.find_by_day(params[:id])
+    @calendar = Calendar.where(day: params[:id], user_id: current_user.id)[0]
     @calendar.delete
   end
 

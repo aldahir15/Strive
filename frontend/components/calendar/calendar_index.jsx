@@ -38,7 +38,7 @@ class CalendarIndex extends React.Component {
             {this.props.calendars[indx].day}
             <ul className="workouts-within">
               {this.props.calendars[indx].workouts.map((workout) =>
-            workout.title ? <li><Link to={`workouts/${workout.id}`} key={workout.id}>
+            workout.title ? <li key={workout.id}><Link to={`workouts/${workout.id}`}>
               {`${workout.time}${workout.dayornight}: ${workout.title}`}
               </Link></li> : <div></div>)}
             </ul>
@@ -50,6 +50,7 @@ class CalendarIndex extends React.Component {
   }
 
   render(){
+    console.log("OBJECT KEYS", Object.keys(this.props.calendars));
     return(
       <div>
       {this.calendarView()}
@@ -58,5 +59,3 @@ class CalendarIndex extends React.Component {
 }
 
 export default CalendarIndex;
-  // Object.keys(this.props.calendars).map((indx) =>
-  //   <li>{this.props.calendars[indx].day}</li>)

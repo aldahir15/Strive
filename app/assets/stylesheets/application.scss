@@ -412,18 +412,24 @@ body {
     background: #eee;
     display: flex;
     flex-wrap: wrap;
+    padding-left: 10px;
+    flex-grow: inherit;
 }
 
 .daysN li {
     list-style-type: none;
-    display: inline-block;
     width: 14%;
     text-align: left;
-    height: 120px;
+    min-height: 120px;
+    height: 100%;
     font-size:14px;
     color:#777;
     border: 1px solid black;
     border-radius: 2px;
+}
+
+.daysN a{
+  text-decoration: none;
 }
 
 .active {
@@ -432,16 +438,16 @@ body {
 }
 
 .workouts-within{
-  padding: 5px;
   display: flex;
   flex-direction: column;
+  padding-left: 5px;
 }
 
 .workouts-within li {
+  font-size: 12px;
   text-align: left;
   color: black;
   width: 100%;
   border: 0;
-  height: auto;
-  text-decoration: none;
+  min-height: 20px;
 }
