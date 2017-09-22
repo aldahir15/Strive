@@ -57,12 +57,12 @@ class Calendar extends React.Component {
         if (nums.includes(fulltime)) {
           const sentence = `${workout.time} ${workout.dayornight}:  ${workout.title}`;
           nums[nums.indexOf(fulltime)] =
-          <Link to={`workouts/${workout.id}`}>{sentence}</Link>;
+          <Link to={`workouts/${workout.id}`} key={workout.id}>{sentence}</Link>;
         }
       });
     }
     return nums.map((num) => (
-      <li>{num}</li>
+      <li key={num}>{num}</li>
     ));
   }
 

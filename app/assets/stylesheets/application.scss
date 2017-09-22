@@ -433,13 +433,15 @@ body {
 
 .workouts-within{
   padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .workouts-within li {
   text-align: left;
   color: black;
-  list-style-type: lower-latin;
   width: 100%;
   border: 0;
   height: auto;
+  text-decoration: none;
 }

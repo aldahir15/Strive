@@ -16,8 +16,7 @@ class CalendarIndex extends React.Component {
     const MONTHS = [ "Jan", "Feb", "Mar", "Apr",
               "May", "Jun", "July", "Aug",
             "Sep", "Oct", "Nov", "Dec"];
-    if (Object.keys(this.props.calendars).length !== 0) {
-      console.log("HERE", typeof date.getDate());
+    if (Object.keys(this.props.calendars).length > 20) {
       return(
         <div>
           <div className="month">
@@ -35,11 +34,13 @@ class CalendarIndex extends React.Component {
           </ul>
           <ul className="daysN">
           {Object.keys(this.props.calendars).map((indx) =>
-            <li className={parseInt(indx) === date.getDate() ? "active" : ""}>
+            <li key={indx} className={parseInt(indx) === date.getDate() ? "active" : ""}>
             {this.props.calendars[indx].day}
             <ul className="workouts-within">
               {this.props.calendars[indx].workouts.map((workout) =>
-            workout.title ? <li>{`*${workout.title}`}</li> : <div></div>)}
+            workout.title ? <li><Link to={`workouts/${workout.id}`} key={workout.id}>
+              {`${workout.time}${workout.dayornight}: ${workout.title}`}
+              </Link></li> : <div></div>)}
             </ul>
             </li>)}
           </ul>
