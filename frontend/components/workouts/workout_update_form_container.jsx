@@ -14,14 +14,11 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const action = ownProps.match.params.workoutId ? updateWorkout : createWorkout;
-  return {
+const mapDispatchToProps = (dispatch, ownProps) => ({
     fetchWorkout: (id) => dispatch(fetchWorkout(id)),
-    action: (workout) => dispatch(action(workout)),
+    updateWorkout: (workout) => dispatch(updateWorkout(workout)),
     deleteWorkout: (id) => dispatch(deleteWorkout(id))
-  };
-};
+});
 
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WorkoutUpdateForm));

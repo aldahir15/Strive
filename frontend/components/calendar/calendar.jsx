@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import {fetchQuote} from '../../util/quote_api_util';
+import WorkoutCreateModal from '../workouts/WorkoutCreateModal';
+import WorkoutCreateFormContainer from '../workouts/workout_create_form_container';
+
 
 class Calendar extends React.Component {
 
@@ -69,7 +72,10 @@ class Calendar extends React.Component {
         <div className="day-calendar-container">
           <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
           <div className="home-calendar">
-            <h3>{this.state.currentDate}</h3>
+            <div className="create-workout-calendar">
+              <h3>{this.state.currentDate}</h3>
+              <WorkoutCreateModal action={WorkoutCreateFormContainer}/>
+            </div>
             <ul className="time-calendar">
               {this.workouts()}
             </ul>

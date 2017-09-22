@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import WorkoutUpdateFormContainer from './workout_update_form_container';
-import { Link } from 'react-router-dom';
+import WorkoutCreateFormContainer from './workout_create_form_container';
 
 const customStyles = {
   content : {
@@ -16,7 +15,7 @@ const customStyles = {
   }
 };
 
-class WorkoutModal extends React.Component {
+class WorkoutCreateModal extends React.Component {
   constructor(props) {
     super(props);
 
@@ -39,12 +38,11 @@ class WorkoutModal extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-    
   }
 
   render() {
-    const text = this.props.action === WorkoutUpdateFormContainer ? "Update Workout" : "+";
-    const classN = this.props.action === WorkoutUpdateFormContainer ? "workout-form" : "plus-form";
+    const text = "+";
+    const classN = "plus-form";
     return (
       <div>
         <button onClick={this.openModal} className={classN}>{text}</button>
@@ -56,11 +54,11 @@ class WorkoutModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <this.props.action text={text}/>
+          <WorkoutCreateFormContainer text={text}/>
         </Modal>
       </div>
     );
   }
 }
 
-export default WorkoutModal;
+export default WorkoutCreateModal;

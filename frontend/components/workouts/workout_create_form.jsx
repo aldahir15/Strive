@@ -2,27 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
-class WorkoutUpdateForm extends React.Component {
+class WorkoutCreateForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {title: "", description: "", calendar_id: 0, time: 0, dayornight: "", id: 0};
-  }
-
-  componentDidMount(){
-    this.props.fetchWorkout(this.props.match.params.workoutId)
-    .then((action) => this.setState({title: action.workout.title,
-                                    description: action.workout.description ? action.workout.description : "",
-                                    calendar_id: action.workout.calendar.id,
-                                    time: action.workout.time,
-                                    dayornight: action.workout.dayornight,
-                                    id: action.workout.id}));
-  }
-
-  componentWillReceiveProps(nextProps){
-    if (this.props.match.params.workoutId !== nextProps.match.params.workoutId) {
-      this.props.fetchWorkout(nextProps.match.params.workoutId);
-    }
   }
 
   update(field){
@@ -33,7 +17,7 @@ class WorkoutUpdateForm extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.updateWorkout(this.state);
+    this.props.createWorkout(this.state);
     location.reload();
   }
 
@@ -41,28 +25,28 @@ class WorkoutUpdateForm extends React.Component {
     return(
       <div className="update-form">
         <form onSubmit={this.handleSubmit}>
-          <label><p>Title:</p>
+          <label>Title:
             <input type="text" onChange={this.update("title")} value={this.state.title} />
           </label>
 
-          <label><p>Description:</p>
+          <label>Description:
             <textarea onChange={this.update("description")} value={this.state.description} />
           </label>
 
-          <label><p>Date:</p>
+          <label>Date:
             <input type="number" onChange={this.update("calendar_id")} value={this.state.calendar_id} />
           </label>
 
-          <label><p>Time:</p>
+          <label>Time:
             <input type="number" onChange={this.update("time")} value={this.state.time} />
             <select onChange={this.update("dayornight")}>
-              <option value="AM" >AM</option>
+              <option selected value="AM" >AM</option>
               <option value="PM" >PM</option>
             </select>
           </label>
 
 
-          <input type="submit" value="Update Workout" />
+          <input type="submit" value="Create Workout" />
         </form>
       </div>
     );
@@ -71,4 +55,4 @@ class WorkoutUpdateForm extends React.Component {
 }
 
 
-export default WorkoutUpdateForm;
+export default WorkoutCreateForm;

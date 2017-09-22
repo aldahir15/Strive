@@ -2,9 +2,18 @@ class Api::WorkoutsController < ApplicationController
   before_action :require_login
 
   def create
-    @workout = Calendar.new(workout_params)
+    @workout = Workout.new(workout_params)
     @workout.user_id = current_user.id
     if @workout.save
+      render "api/workouts/show"
+    else
+      render json: @workout.errors.full_messages, status: 422
+    end
+  end
+
+  def update
+    @workout = Workout.find(params[:id])
+    if @workout.update(workout_params)
       render "api/workouts/show"
     else
       render json: @workout.errors.full_messages, status: 422
@@ -22,6 +31,6 @@ class Api::WorkoutsController < ApplicationController
 
   private
   def workout_params
-    params.require(:workout).permit(:title, :description, :calendar_id)
+    params.require(:workout).permit(:title, :description, :calendar_id, :time, :dayornight)
   end
 end
