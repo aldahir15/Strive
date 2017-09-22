@@ -47,4 +47,9 @@ class User < ApplicationRecord
 
   has_many :calendars
   has_many :workouts
+
+  has_many :paths,
+    primary_key: :id,
+    foreign_key: :user_id,
+    class_name: :Path
 end

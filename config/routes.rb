@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy, :show]
     resources :calendars, only: [:index, :create, :destroy, :show]
-    resources :workouts, only: [:create, :update, :destroy, :show]
+    resources :workouts, only: [:create, :update, :destroy, :show] do
+      resources :paths, only: [:show, :destroy]
+    end
+    resources :paths, only: [:index, :create, :update, :destroy]
   end
 end

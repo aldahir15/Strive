@@ -21,4 +21,9 @@ class Workout < ApplicationRecord
 
   belongs_to :calendar
   belongs_to :user
+
+  has_many :paths,
+    primary_key: :id,
+    foreign_key: :workout_id,
+    class_name: :Path
 end
