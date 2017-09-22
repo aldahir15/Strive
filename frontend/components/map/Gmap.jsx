@@ -50,10 +50,8 @@ class GoogleMap extends React.Component {
           new google.maps.Marker({position: event.latLng, map: this.map});
           this.setState({endingPos:
             {lat: event.latLng.lat(), lon: event.latLng.lng()}});
-        } else if (this.state.startingPos.lat && this.state.endingPos.lat ) {
           const starting = {lat: this.state.startingPos.lat, lng: this.state.startingPos.lon};
           const ending = { lat: this.state.endingPos.lat, lng: this.state.endingPos.lon};
-          console.log("WHAT WENT WRONG DUMMY", starting, ending);
           const requesttwo = {
             origin:starting,
             destination:ending,
@@ -65,6 +63,7 @@ class GoogleMap extends React.Component {
               console.log(result.routes[0].legs[0].distance);
             }
           });
+          this.setState({startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}});
         }
         console.log(this.state);
     });
