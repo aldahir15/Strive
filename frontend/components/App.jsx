@@ -23,6 +23,8 @@ const App = () => {
         <LoggedinRoute path="/home" component={CalendarContainer} />
         <LoggedinRoute exact path="/workouts/:workoutId" component={WorkoutContainer} />
         <LoggedinRoute path="/workouts/:workoutId/edit" component={WorkoutUpdateFormContainer} />
+        <LoggedinRoute exact path="/train/" component={WorkoutContainer} />
+
       </Switch>
     </div>
   );

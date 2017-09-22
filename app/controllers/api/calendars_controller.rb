@@ -2,7 +2,7 @@ class Api::CalendarsController < ApplicationController
   before_action :require_login, :ensure_full_calendar
 
   def ensure_full_calendar
-    if Calendar.all.length < 29
+    if Calendar.where(user_id: current_user.id).length < 29
       (1..30).to_a.each do |x|
         Calendar.create(day: x, user_id: current_user.id)
       end
@@ -10,7 +10,7 @@ class Api::CalendarsController < ApplicationController
   end
 
   def index
-    @calendar = Calendar.all
+    @calendar = Calendar.where(user_id: current_user.id)
   end
 
   def create

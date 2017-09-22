@@ -74,7 +74,7 @@ class Calendar extends React.Component {
           <div className="home-calendar">
             <div className="create-workout-calendar">
               <h3>{this.state.currentDate}</h3>
-              <WorkoutCreateModal action={WorkoutCreateFormContainer}/>
+              <WorkoutCreateModal action={WorkoutCreateFormContainer} calendar={this.props.day}/>
             </div>
             <ul className="time-calendar">
               {this.workouts()}

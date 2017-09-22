@@ -49,10 +49,6 @@ class WorkoutUpdateForm extends React.Component {
             <textarea onChange={this.update("description")} value={this.state.description} />
           </label>
 
-          <label><p>Date:</p>
-            <input type="number" onChange={this.update("calendar_id")} value={this.state.calendar_id} />
-          </label>
-
           <label><p>Time:</p>
             <input type="number" onChange={this.update("time")} value={this.state.time} />
             <select onChange={this.update("dayornight")}>

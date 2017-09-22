@@ -39,7 +39,7 @@ class WorkoutModal extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-    
+
   }
 
   render() {
