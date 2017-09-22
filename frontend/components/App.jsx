@@ -10,7 +10,7 @@ import CalendarContainer from './calendar/calendar_container';
 import WorkoutContainer from './workouts/workouts_container';
 import WorkoutUpdateFormContainer from './workouts/workout_update_form_container';
 import CalendarIndexContainer from './calendar/calendar_index_container';
-
+import ExploreContainer from './explore/explore_container';
 
 const App = () => {
   return (
@@ -24,6 +24,7 @@ const App = () => {
         <LoggedinRoute exact path="/workouts/:workoutId" component={WorkoutContainer} />
         <LoggedinRoute path="/workouts/:workoutId/edit" component={WorkoutUpdateFormContainer} />
         <LoggedinRoute path="/train" component={CalendarIndexContainer} />
+        <LoggedinRoute path="/explore" component={ExploreContainer} />
 
       </Switch>
     </div>

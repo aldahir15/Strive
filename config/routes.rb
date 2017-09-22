@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :calendars, only: [:index, :create, :destroy, :show]
     resources :workouts, only: [:create, :update, :destroy, :show] do
-      resources :paths, only: [:show, :destroy]
+      resources :paths, only: [:show, :create, :destroy]
     end
     resources :paths, only: [:index, :create, :update, :destroy]
   end

@@ -12,6 +12,14 @@ export const fetchPath = (workoutId, id) => {
   });
 };
 
+export const createPath = (path) => {
+  return $.ajax({
+    method: 'POST',
+    url: `/api/paths/`,
+    data: {path}
+  });
+};
+
 
 export const deletePath = (workoutId, id) => {
   return $.ajax({

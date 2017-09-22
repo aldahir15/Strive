@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 
 
-class GMap extends React.Component {
+class GoogleMap extends React.Component {
 
   componentDidMount(){
     const mapOptions = {
@@ -27,4 +27,4 @@ class GMap extends React.Component {
   }
 }
 
-export default withRouter(GMap);
+export default withRouter(GoogleMap);

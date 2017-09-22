@@ -17,7 +17,7 @@ const loggedin = (props) => {
       <ul className="login-ul-nav">
       <Link to="/home"><p>Home</p></Link>
       <Link to="/train"><p>Train</p></Link>
-      <Link to="#"><p>Explore</p></Link>
+      <Link to="/explore"><p>Explore</p></Link>
         <Link to="#"><p>Connect</p></Link>
       </ul>
     </div>
