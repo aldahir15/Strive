@@ -4,7 +4,7 @@ import configureStore from "./store/store";
 import Root from './components/root';
 import {login} from "./actions/session_actions";
 
-import {fetchQuote} from "./util/quote_api_util";
+import {fetchPaths} from "./util/paths_api_util";
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
-  window.fetchQuote = fetchQuote;
+  window.fetchPaths = fetchPaths;
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store} />, root);
 });
