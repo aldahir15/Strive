@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import {fetchQuote} from '../../util/quote_api_util';
 import WorkoutCreateModal from '../workouts/WorkoutCreateModal';
 import WorkoutCreateFormContainer from '../workouts/workout_create_form_container';
+import { Parallax } from 'react-parallax';
 
 
 class Calendar extends React.Component {
@@ -69,20 +70,22 @@ class Calendar extends React.Component {
 
   render(){
     return(
-      <div className="home">
-        <div className="day-calendar-container">
-          <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
-          <div className="home-calendar">
-            <div className="create-workout-calendar">
-              <h3>{this.state.currentDate}</h3>
-              <WorkoutCreateModal action={WorkoutCreateFormContainer} calendar={this.props.day}/>
+      <div className="home-container">
+        <Parallax bgImage="http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg" strength={400} className="home">
+          <div className="day-calendar-container">
+            <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
+            <div className="home-calendar">
+              <div className="create-workout-calendar">
+                <h3>{this.state.currentDate}</h3>
+                <WorkoutCreateModal action={WorkoutCreateFormContainer} calendar={this.props.day}/>
+              </div>
+              <ul className="time-calendar">
+                {this.workouts()}
+              </ul>
             </div>
-            <ul className="time-calendar">
-              {this.workouts()}
-            </ul>
           </div>
-        </div>
-        {this.renderQuote()}
+          {this.renderQuote()}
+        </Parallax>
       </div>
     );
   }

@@ -8,7 +8,7 @@ class GoogleMap extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}};
+    this.state = {startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}, distance: 0};
   }
 
   componentDidMount(){
@@ -23,24 +23,24 @@ class GoogleMap extends React.Component {
     };
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
-    const latLng = [
-      {lat: 37.773972, lng: -122.431297},
-      {lat: 37.7, lng: -122.4}];
+    // const latLng = [
+    //   {lat: 37.773972, lng: -122.431297},
+    //   {lat: 37.7, lng: -122.4}];
     directionsDisplay.setMap(this.map);
-
-    const start = latLng[0];
-    const end = latLng[1];
-    let request = {
-      origin:start,
-      destination:end,
-      travelMode: 'DRIVING'
-    };
-    directionsService.route(request, function(result, status) {
-      if (status == 'OK') {
-        directionsDisplay.setDirections(result);
-        console.log(result.routes[0].legs[0].distance);
-      }
-    });
+    //
+    // const start = latLng[0];
+    // const end = latLng[1];
+    // let request = {
+    //   origin:start,
+    //   destination:end,
+    //   travelMode: 'DRIVING'
+    // };
+    // directionsService.route(request, function(result, status) {
+    //   if (status == 'OK') {
+    //     directionsDisplay.setDirections(result);
+    //     console.log(result.routes[0].legs[0].distance);
+    //   }
+    // });
     google.maps.event.addListener(this.map, "click", (event) => {
         if (!this.state.startingPos.lat) {
           new google.maps.Marker({position: event.latLng, map: this.map});
@@ -57,14 +57,16 @@ class GoogleMap extends React.Component {
             destination:ending,
             travelMode: 'DRIVING'
           };
-          directionsService.route(requesttwo, function(result, status) {
+          directionsService.route(requesttwo, (result, status) => {
             if (status == 'OK') {
               directionsDisplay.setDirections(result);
+              this.setState({distance: result.routes[0].legs[0].distance})
               console.log(result.routes[0].legs[0].distance);
             }
           });
           this.setState({startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}});
         }
+        directionsDisplay.setMap(this.map);
         console.log(this.state);
     });
   }

@@ -192,7 +192,7 @@ body {
 
 
 .logged-off-greeting {
-  background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
+  // background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
   overflow-x: hidden;
@@ -270,7 +270,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 700px;
-  background-image: url(http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg);
+  // background-image: url(http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -281,7 +281,7 @@ body {
 .quote-div {
   position: relative;
   top: 70px;
-  left: 130px;
+  left: 200px;
 }
 
 .quote-div h1 {
@@ -474,4 +474,9 @@ body {
   border: 1px solid black;
   width: 80%;
   justify-content: space-between;
+}
+
+.home-container .react-parallax-content {
+  display: flex;
+  flex-direction: row;
 }
