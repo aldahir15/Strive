@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-import WorkoutCreateFormContainer from '../workouts/workout_create_form_container';
+import PathFormContainer from '../explore/path_form_container';
 
 const customStyles = {
   content : {
@@ -42,7 +42,7 @@ class PathCreateModal extends React.Component {
 
   render() {
     const text = "+";
-    const classN = "plus-form";
+    const classN = "path-create";
     return (
       <div>
         <button onClick={this.openModal} className={classN}>{text}</button>
@@ -54,7 +54,7 @@ class PathCreateModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <p>Yo</p>
+          <PathFormContainer state={this.props.state}/>
         </Modal>
       </div>
     );

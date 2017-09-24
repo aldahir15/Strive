@@ -26,7 +26,7 @@ class Api::PathsController < ApplicationController
 
   private
   def path_params
-    params.require(:path).permit(:starting_lat, :starting_lon, :ending_lat, :ending_lon,
-                                  :distance, :workout_id)
+    params.require(:path).permit(:title, :starting_lat, :starting_lng, :ending_lat, :ending_lng,
+                                  :distance)
   end
 end

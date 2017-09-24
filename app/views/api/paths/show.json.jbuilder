@@ -1,2 +1,2 @@
-json.extract! @path, :starting_lat, :starting_lon, :ending_lat,
-:ending_lon, :workout, :id
+json.extract! @path, :title, :starting_lat, :starting_lng, :ending_lat,
+:ending_lng, :id

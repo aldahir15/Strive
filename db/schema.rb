@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170924183907) do
+ActiveRecord::Schema.define(version: 20170924185530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,15 +23,15 @@ ActiveRecord::Schema.define(version: 20170924183907) do
   end
 
   create_table "paths", force: :cascade do |t|
-    t.integer "starting_lat", null: false
-    t.integer "starting_lon", null: false
-    t.integer "ending_lat", null: false
-    t.integer "ending_lon", null: false
-    t.integer "distance"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "title"
+    t.float "starting_lat"
+    t.float "starting_lng"
+    t.float "ending_lat"
+    t.float "ending_lng"
+    t.float "distance"
   end
 
   create_table "users", force: :cascade do |t|

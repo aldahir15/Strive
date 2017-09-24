@@ -7,8 +7,11 @@ class GoogleMap extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}, distance: ""};
+    this.state = {title: "", startingPos: {lat: 0, lng: 0},
+                  endingPos: {lat: 0, lng: 0}, distance: 0};
     this.handleDistance = this.handleDistance.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.markers = [];
   }
 
   componentDidMount(){
@@ -23,35 +26,21 @@ class GoogleMap extends React.Component {
     };
     const map = this.refs.map;
     this.map = new google.maps.Map(map, mapOptions);
-    // const latLng = [
-    //   {lat: 37.773972, lng: -122.431297},
-    //   {lat: 37.7, lng: -122.4}];
     directionsDisplay.setMap(this.map);
-    //
-    // const start = latLng[0];
-    // const end = latLng[1];
-    // let request = {
-    //   origin:start,
-    //   destination:end,
-    //   travelMode: 'DRIVING'
-    // };
-    // directionsService.route(request, function(result, status) {
-    //   if (status == 'OK') {
-    //     directionsDisplay.setDirections(result);
-    //     console.log(result.routes[0].legs[0].distance);
-    //   }
-    // });
     google.maps.event.addListener(this.map, "click", (event) => {
         if (!this.state.startingPos.lat) {
-          new google.maps.Marker({position: event.latLng, map: this.map});
+          this.setState({distance: 0});
+          this.addMarker(event.latLng, this.map);
           this.setState({startingPos:
-            {lat: event.latLng.lat(), lon: event.latLng.lng()}});
+            {lat: event.latLng.lat(), lng: event.latLng.lng()}});
         } else if (!this.state.endingPos.lat) {
-          new google.maps.Marker({position: event.latLng, map: this.map});
+          this.addMarker(event.latLng, this.map);
           this.setState({endingPos:
-            {lat: event.latLng.lat(), lon: event.latLng.lng()}});
-          const starting = {lat: this.state.startingPos.lat, lng: this.state.startingPos.lon};
-          const ending = { lat: this.state.endingPos.lat, lng: this.state.endingPos.lon};
+            {lat: event.latLng.lat(), lng: event.latLng.lng()}});
+          this.placeMarkersOnMap(null);
+          this.markers = [];
+          const starting = {lat: this.state.startingPos.lat, lng: this.state.startingPos.lng};
+          const ending = { lat: this.state.endingPos.lat, lng: this.state.endingPos.lng};
           const requesttwo = {
             origin:starting,
             destination:ending,
@@ -60,15 +49,24 @@ class GoogleMap extends React.Component {
           directionsService.route(requesttwo, (result, status) => {
             if (status == 'OK') {
               directionsDisplay.setDirections(result);
-              this.setState({distance: result.routes[0].legs[0].distance.text});
-              console.log(result.routes[0].legs[0].distance);
+              this.setState({distance: parseFloat(result.routes[0].legs[0].distance.text)});
             }
           });
-          this.setState({startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}});
+          // this.setState({startingPos: {lat: 0, lng: 0}, endingPos: {lat: 0, lng: 0}});
         }
         directionsDisplay.setMap(this.map);
-        console.log(this.state);
     });
+  }
+
+  addMarker(location, map){
+    const marker = new google.maps.Marker({position: location, map: map});
+    this.markers.push(marker);
+  }
+
+  placeMarkersOnMap(map){
+    for (let i = 0; i < this.markers.length; i++) {
+      this.markers[i].setMap(map);
+    }
   }
 
 
@@ -79,12 +77,26 @@ class GoogleMap extends React.Component {
     }
   }
 
+  handleClick(e){
+    e.preventDefault();
+    this.props.action(this.state);
+    if (this.state.distance) {
+      this.setState({startingPos: {lat: 0, lng: 0},
+                    endingPos: {lat: 0, lng: 0},
+                    distance: 0});
+    }
+  }
+
 
   render(){
     return(
-      <div className="map-container" ref="map">
-        Map
-        {this.handleDistance()}
+      <div className="button-map-container">
+        <button onClick={this.handleClick}
+        disabled={this.state.distance > 0 ? "" : "true"}>
+        Add Path</button>
+        <div className="map-container" ref="map">
+          Map
+        </div>
       </div>
     );
   }

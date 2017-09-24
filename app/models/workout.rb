@@ -25,5 +25,6 @@ class Workout < ApplicationRecord
   belongs_to :path,
     primary_key: :id,
     foreign_key: :path_id,
-    class_name: :Path
+    class_name: :Path,
+    optional: true
 end

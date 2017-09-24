@@ -514,3 +514,18 @@ body {
 .last-month-days {
   background-color: #A9A9A9;
 }
+
+.button-map-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-map-container button {
+  height: 50px;
+  width: 100px;
+}
+
+.path-create {
+  display: none;
+}

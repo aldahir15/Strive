@@ -3,15 +3,15 @@
 # Table name: paths
 #
 #  id           :integer          not null, primary key
-#  starting_lat :integer          not null
-#  starting_lon :integer          not null
-#  ending_lat   :integer          not null
-#  ending_lon   :integer          not null
 #  distance     :integer
 #  user_id      :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  title        :string
+#  starting_lat :float
+#  starting_lng :float
+#  ending_lat   :float
+#  ending_lng   :float
 #
 
 class Path < ApplicationRecord
