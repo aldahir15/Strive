@@ -22,7 +22,8 @@ const loggedin = (props) => {
         <Link to="/explore"><p>Explore</p></Link>
           <Link to="#"><p>Connect</p></Link>
       </ul>
-      <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png" />
+      <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png"
+      onClick={() => console.log(props)} />
     </div>
   );
 };
