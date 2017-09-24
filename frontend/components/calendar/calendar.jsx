@@ -25,6 +25,7 @@ class Calendar extends React.Component {
     this.setState({currentDate: `${currMonth} ${currDay}, ${currYear}`});
     this.props.fetchCalendar(day.getDate());
     this.getQuote();
+    this.props.fetchPaths();
   }
 
   dayOfWeek(){
@@ -69,6 +70,7 @@ class Calendar extends React.Component {
   }
 
   render(){
+    console.log("CURRENPROPS", this.props);
     return(
       <div className="home-container">
         <Parallax bgImage="http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg" strength={400} className="home">
@@ -77,7 +79,7 @@ class Calendar extends React.Component {
             <div className="home-calendar">
               <div className="create-workout-calendar">
                 <h3>{this.state.currentDate}</h3>
-                <WorkoutCreateModal action={WorkoutCreateFormContainer} calendar={this.props.day}/>
+                <WorkoutCreateModal action={WorkoutCreateFormContainer} calendar={this.props.day} paths={this.props.path}/>
               </div>
               <ul className="time-calendar">
                 {this.workouts()}

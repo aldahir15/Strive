@@ -521,9 +521,24 @@ body {
   justify-content: flex-end;
 }
 
+
 .button-map-container button {
   height: 50px;
   width: 100px;
+  border: 1px solid #999999;
+  background: #0171b7;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.button-map-container button:disabled {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
 }
 
 .path-create {

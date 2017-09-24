@@ -6,7 +6,8 @@ class WorkoutCreateForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {title: "", description: "", calendar_id: this.props.calendar.id, time: 9, dayornight: "AM", id: 0};
+    this.state = {title: "", description: "", calendar_id: this.props.calendar.id,
+                  time: 9, dayornight: "AM", id: 0, path_id: 0};
   }
 
   update(field){
@@ -19,6 +20,18 @@ class WorkoutCreateForm extends React.Component {
     e.preventDefault();
     this.props.createWorkout(this.state);
     location.reload();
+  }
+
+  pathOptions(){
+    console.log("PATHS", this.props);
+    if (this.props.path) {
+      return(
+        Object.keys(this.props.path).map((indx) =>
+        <option value={indx}>{this.props.path[indx]}</option>)
+      );
+    } else {
+      return(<option></option>);
+    }
   }
 
   render(){
@@ -39,6 +52,12 @@ class WorkoutCreateForm extends React.Component {
             <select onChange={this.update("dayornight")}>
               <option value="AM" >AM</option>
               <option value="PM" >PM</option>
+            </select>
+          </label>
+
+          <label>Path:
+            <select onChange={this.update("path_id")}>
+              {this.pathOptions()}
             </select>
           </label>
 

@@ -13,8 +13,11 @@ class Explore extends React.Component {
                   endingPos: {lat: 0, lng: 0}, distance: ""};
   }
 
+  componentDidMount(){
+    this.props.fetchPaths();
+  }
+
   update(ownProps){
-    console.log("PARENT", ownProps);
     this.setState({startingPos: {lat: ownProps.startingPos.lat,
                       lng: ownProps.startingPos.lng},
                     endingPos: {lat: ownProps.endingPos.lat,
@@ -23,7 +26,21 @@ class Explore extends React.Component {
     document.getElementsByClassName("path-create")[0].click();
   }
 
+  pathList(){
+    if (this.props.path) {
+      return(
+        <ul>
+        {Object.keys(this.props.path).map((indx) =>
+          <li>{this.props.path[indx].title}</li>)}
+          </ul>
+        );
+    } else {
+      return(<div></div>);
+    }
+  }
+
   render(){
+    console.log(this.props);
     return(
       <div className="explore-div">
       <h1>EXPLORE</h1>
@@ -31,6 +48,7 @@ class Explore extends React.Component {
         <div className="map-div">
           <div className="path-list">
           <p>PATHS HERE</p>
+          {this.pathList()}
           </div>
           <GMap action={this.update}/>
         </div>
