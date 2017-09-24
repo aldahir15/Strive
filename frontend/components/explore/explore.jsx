@@ -3,10 +3,15 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import GMap from '../map/GMap';
 
+
 class Explore extends React.Component {
 
+  update(){
+    console.log("UPDATE BOIZ", this.props);
+  }
+
   render(){
-    console.log(this.props);
+    console.log("CURRENT", this.props);
     return(
       <div className="explore-div">
       <h1>EXPLORE</h1>
@@ -14,7 +19,7 @@ class Explore extends React.Component {
           <div className="path-list">
           <p>PATHS HERE</p>
           </div>
-          <GMap />
+          <GMap onChange={this.update}/>
         </div>
       </div>
     );

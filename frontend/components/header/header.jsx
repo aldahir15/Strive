@@ -11,15 +11,18 @@ import SignupFormContainer from '../session_form/signup_form_container';
 const loggedin = (props) => {
   return (
     <div className="logout-header">
-      <button className="myButton" onClick={props.logout}>Log Out</button>
+      <div className="button-container">
+        <Link to="#" className="myButton" onClick={props.logout}>Log Out</Link>
+      </div>
       <p>HELLO {props.user.username}</p>
       <div className="divider2"></div>
       <ul className="login-ul-nav">
-      <Link to="/home"><p>Home</p></Link>
-      <Link to="/train"><p>Train</p></Link>
-      <Link to="/explore"><p>Explore</p></Link>
-        <Link to="#"><p>Connect</p></Link>
+        <Link to="/home"><p>Home</p></Link>
+        <Link to="/train"><p>Train</p></Link>
+        <Link to="/explore"><p>Explore</p></Link>
+          <Link to="#"><p>Connect</p></Link>
       </ul>
+      <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png" />
     </div>
   );
 };

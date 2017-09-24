@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-
 import MarkerUtil from '../../util/marker_util';
 
 class GoogleMap extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}, distance: 0};
+    this.state = {startingPos: {lat: 0, lon: 0}, endingPos: {lat: 0, lon: 0}, distance: ""};
+    this.handleDistance = this.handleDistance.bind(this);
   }
 
   componentDidMount(){
@@ -60,7 +60,7 @@ class GoogleMap extends React.Component {
           directionsService.route(requesttwo, (result, status) => {
             if (status == 'OK') {
               directionsDisplay.setDirections(result);
-              this.setState({distance: result.routes[0].legs[0].distance})
+              this.setState({distance: result.routes[0].legs[0].distance.text});
               console.log(result.routes[0].legs[0].distance);
             }
           });
@@ -72,11 +72,19 @@ class GoogleMap extends React.Component {
   }
 
 
+  handleDistance(){
+    if (this.state.distance) {
+      // document.getElementsByClassName("plus-form")[0].click();
+      console.log("OK");
+    }
+  }
+
 
   render(){
     return(
       <div className="map-container" ref="map">
         Map
+        {this.handleDistance()}
       </div>
     );
   }
