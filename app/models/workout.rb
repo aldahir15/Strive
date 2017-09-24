@@ -11,7 +11,7 @@
 #  updated_at  :datetime         not null
 #  time        :integer
 #  dayornight  :string
-#  route_id    :integer
+#  path_id     :integer
 #
 
 class Workout < ApplicationRecord
@@ -22,8 +22,8 @@ class Workout < ApplicationRecord
   belongs_to :calendar
   belongs_to :user
 
-  has_many :paths,
+  belongs_to :path,
     primary_key: :id,
-    foreign_key: :workout_id,
+    foreign_key: :path_id,
     class_name: :Path
 end

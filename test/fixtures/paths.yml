@@ -9,9 +9,9 @@
 #  ending_lon   :integer          not null
 #  distance     :integer
 #  user_id      :integer          not null
-#  workout_id   :integer          not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  title        :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
