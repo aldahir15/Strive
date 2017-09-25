@@ -15,12 +15,15 @@ class Header extends React.Component {
 
   componentDidMount(){
     window.addEventListener("scroll", this.handleScroll);
+    // window.removeEventListener("scroll", this.handleScroll);
   }
 
   handleScroll(){
-    const para = document.getElementsByClassName("parallax-boiz");
-    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
+    if (document.body.scrollTop > 881 || document.documentElement.scrollTop > 881) {
       console.log("YUP");
+      document.getElementsByClassName("scroll-login-header")[0].style.display = "flex";
+    } else {
+      document.getElementsByClassName("scroll-login-header")[0].style.display = "none";
     }
   }
 

@@ -12,10 +12,12 @@ import WorkoutUpdateFormContainer from './workouts/workout_update_form_container
 import CalendarIndexContainer from './calendar/calendar_index_container';
 import ExploreContainer from './explore/explore_container';
 import EventsIndexContainer from './events/events_index_container';
+import ScrollHeaderContainer from './header/scroll_header_container';
 
 const App = () => {
   return (
     <div>
+      <ScrollHeaderContainer />
       <HeaderContainer />
       <Switch>
         <RequireLoginRoute exact path="/" component={GreetingContainer} />

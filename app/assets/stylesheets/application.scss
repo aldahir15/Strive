@@ -45,6 +45,21 @@ body {
   padding-right: 30px;
 }
 
+.scroll-login-header{
+  position: fixed;
+  height: 50px;
+  display: none;
+  flex-direction: row-reverse;
+  background: white;
+  border-bottom: 1px solid black;
+  z-index: 9999999999;
+}
+
+.scroll-login-header img{
+  height: 50px;
+  width: auto;
+}
+
 .button-container {
   height: 100%;
   display: flex;

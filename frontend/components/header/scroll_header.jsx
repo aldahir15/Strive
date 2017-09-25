@@ -10,53 +10,26 @@ import SignupFormContainer from '../session_form/signup_form_container';
 class Header extends React.Component {
   constructor(props){
     super(props);
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  componentDidMount(){
-    console.log(window);
-    window.addEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll(){
-    console.log("SCROLLING");
-  }
-
-  loggedin(){
-    return (
-      <div className="logout-header">
-        <div className="button-container">
-          <Link to="#" className="myButton" onClick={this.props.logout}>Log Out</Link>
-        </div>
-        <p className="hello-user">HELLO {this.props.user.username}</p>
-        <div className="divider2"></div>
-        <ul className="login-ul-nav">
-          <Link to="/home" className="home-button"><p>Home</p></Link>
-          <Link to="/train"><p>Train</p></Link>
-          <Link to="/explore"><p>Explore</p></Link>
-          <Link to="/connect"><p>Connect</p></Link>
-        </ul>
-          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png"
-          onClick={() => document.getElementsByClassName("home-button")[0].click()}/>
-      </div>
-    );
   }
 
   loggedout(){
     return (
-      <div className="login-header">
-        <AppModal action={SigninFormContainer} className="login-button"/>
-        <button className="demo-button" onClick={() =>
+      <div className="scroll-login-header">
+        <button onClick={() => document.getElementsByClassName("signup-button")[0].click()}
+          className="scroll-login-button">Sign Up</button>
+        <button className="scroll-demo-button" onClick={() =>
           this.props.login({username: "demo", password: "password"})}>Demo Login</button>
-        <div className="divider"></div>
-        <AppModal action={SignupFormContainer} className="signup-button"/>
+        <div className="scroll-divider"></div>
+        <button onClick={() => document.getElementsByClassName("login-button")[0].click()}
+          className="scroll-signup-button">Log In</button>
         <p>HERE TO JOIN?</p>
+        <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png"/>
       </div>
     );
   }
 
   render(){
-    return this.props.user ? this.loggedin() : this.loggedout();
+    return this.props.user ? <div></div> : this.loggedout();
   }
 }
 export default Header;
