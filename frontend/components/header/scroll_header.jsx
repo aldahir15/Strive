@@ -15,14 +15,13 @@ class Header extends React.Component {
   loggedout(){
     return (
       <div className="scroll-login-header">
-        <button onClick={() => document.getElementsByClassName("signup-button")[0].click()}
-          className="scroll-login-button">Sign Up</button>
-        <button className="scroll-demo-button" onClick={() =>
-          this.props.login({username: "demo", password: "password"})}>Demo Login</button>
+        <a onClick={() => document.getElementsByClassName("login-button")[0].click()}
+      className="scroll-signup-link">Log In</a>
+        <a onClick={() => document.getElementsByClassName("signup-button")[0].click()}
+        className="scroll-login-link">Sign Up</a>
+        <a className="scroll-demo-button" onClick={() =>
+          this.props.login({username: "demo", password: "password"})}>Demo Login</a>
         <div className="scroll-divider"></div>
-        <button onClick={() => document.getElementsByClassName("login-button")[0].click()}
-          className="scroll-signup-button">Log In</button>
-        <p>HERE TO JOIN?</p>
         <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png"/>
       </div>
     );
