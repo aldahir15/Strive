@@ -39,6 +39,12 @@ class Greeting extends React.Component {
           <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_1742/v1506383036/Calendar_phjltr.png"/>
         </div>
       </Parallax>
+      <Parallax strength={400} className="parallax-show-2">
+        <div className="second-picture-showcase">
+          <p>3. CONNECT WITH OTHERS</p>
+          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_1722/v1506383388/Connect_qgskrz.png"/>
+        </div>
+      </Parallax>
     </div>);
   }
 }
