@@ -20,7 +20,7 @@ class Header extends React.Component {
           <Link to="/home" className="home-button"><p>Home</p></Link>
           <Link to="/train"><p>Train</p></Link>
           <Link to="/explore"><p>Explore</p></Link>
-            <Link to="#"><p>Connect</p></Link>
+          <Link to="/connect"><p>Connect</p></Link>
         </ul>
           <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png"
           onClick={() => document.getElementsByClassName("home-button")[0].click()}/>

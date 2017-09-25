@@ -544,3 +544,29 @@ body {
 .path-create {
   display: none;
 }
+
+// EVENTS
+
+.events-index ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  text-align: -webkit-center;
+}
+
+.events-index li {
+  display: flex;
+  flex-direction: column;
+}
+
+.events-index h1 {
+  padding-left: 25px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  text-align: -webkit-auto;
+}
+
+.events-index img {
+  width: 40%;
+  height: auto;
+}

@@ -1,17 +1,15 @@
 # == Schema Information
 #
-# Table name: paths
+# Table name: events
 #
-#  id           :integer          not null, primary key
-#  user_id      :integer          not null
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  title        :string
-#  starting_lat :float
-#  starting_lng :float
-#  ending_lat   :float
-#  ending_lng   :float
-#  distance     :float
+#  id          :integer          not null, primary key
+#  title       :string           not null
+#  description :string
+#  user_id     :integer
+#  calendar_id :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  image_url   :string
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

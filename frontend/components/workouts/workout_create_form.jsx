@@ -24,10 +24,12 @@ class WorkoutCreateForm extends React.Component {
 
   pathOptions(){
     console.log("PATHS", this.props);
-    if (this.props.path) {
+    if (this.props.paths) {
       return(
-        Object.keys(this.props.path).map((indx) =>
-        <option value={indx}>{this.props.path[indx]}</option>)
+        Object.keys(this.props.paths).map((indx) =>
+        <option value={indx}>
+          {this.props.paths[indx].title} - {this.props.paths[indx].distance} mi
+        </option>)
       );
     } else {
       return(<option></option>);

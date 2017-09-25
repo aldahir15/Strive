@@ -4,12 +4,13 @@ import errors from './errors_reducer';
 import calendar from './calendar/calendar_reducer';
 import workout from './workouts/workout_reducer';
 import path from './paths/path_reducer';
-
+import event from './events/event_reducer';
 
 export default combineReducers({
   session,
   errors,
   calendar,
   workout,
-  path
+  path,
+  event
 });

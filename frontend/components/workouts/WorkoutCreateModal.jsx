@@ -43,6 +43,7 @@ class WorkoutCreateModal extends React.Component {
   render() {
     const text = "+";
     const classN = "plus-form";
+    // console.log("MODAL STATE", this.props);
     return (
       <div>
         <button onClick={this.openModal} className={classN}>{text}</button>
@@ -54,7 +55,8 @@ class WorkoutCreateModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <WorkoutCreateFormContainer text={text} calendar={this.props.calendar}/>
+          <WorkoutCreateFormContainer text={text} calendar={this.props.calendar}
+          paths={this.props.paths}/>
         </Modal>
       </div>
     );

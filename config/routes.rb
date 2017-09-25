@@ -10,5 +10,6 @@ Rails.application.routes.draw do
       resources :paths, only: [:show, :create, :destroy]
     end
     resources :paths, only: [:index, :create, :update, :destroy]
+    resources :events, only: [:index, :create, :update, :show, :destroy]
   end
 end
