@@ -42,7 +42,7 @@ class AppModal extends React.Component {
 
   render() {
     const text = this.props.action === SignInFormContainer ? "Log In" : "Sign Up";
-    const classN = this.props.action === SignInFormContainer ? "myButton" : "signup-button";
+    const classN = this.props.action === SignInFormContainer ? "login-button" : "signup-button";
     return (
       <div>
         <button onClick={this.openModal} className={classN}>{text}</button>

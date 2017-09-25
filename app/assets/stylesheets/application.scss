@@ -109,6 +109,24 @@ body {
   cursor: pointer;
 }
 
+.login-button {
+  display: flex;
+  font-family:Trebuchet MS;
+  font-size:15px;
+  text-decoration: none;
+  background-color: #fc4d02;
+  color: white;
+  padding:15px 20px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
 .divider{
   width:350px;
   height:auto;
@@ -177,8 +195,10 @@ body {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+  border-radius: 5px;
   cursor: pointer;
   height: 50%;
+  margin-top: 20px;
 }
 
 // Errors-Messages
@@ -210,11 +230,11 @@ body {
   // background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
 }
 
-.logged-off-greeting img{
+.logo-img {
   height: 7% ;
   width: 7% ;
   position: relative;
-  top: -70px;
+  top: -80px;
   left: -60px;
 }
 

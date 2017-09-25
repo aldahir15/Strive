@@ -31,7 +31,7 @@ class Header extends React.Component {
   loggedout(){
     return (
       <div className="login-header">
-        <AppModal action={SigninFormContainer} className="button"/>
+        <AppModal action={SigninFormContainer} className="login-button"/>
         <button className="demo-button" onClick={() =>
           this.props.login({username: "demo", password: "password"})}>Demo Login</button>
         <div className="divider"></div>

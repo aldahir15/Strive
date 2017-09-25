@@ -2,7 +2,7 @@ class Api::EventsController < ApplicationController
   before_action :require_login
 
   def index
-    @events = Event.where(user_id: current_user.id)
+    @events = Event.all
   end
 
   def show
