@@ -55,7 +55,7 @@ class WorkoutCreateModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <WorkoutCreateFormContainer text={text} calendar={this.props.calendar}
+          <WorkoutCreateFormContainer text={text} day={this.props.day}
           paths={this.props.paths}/>
         </Modal>
       </div>

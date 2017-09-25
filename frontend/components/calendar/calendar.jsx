@@ -12,6 +12,7 @@ class Calendar extends React.Component {
   constructor(props){
     super(props);
     this.state = {quote: "", currentDate: ""};
+    this.day = {};
   }
 
   componentDidMount(){
@@ -23,7 +24,7 @@ class Calendar extends React.Component {
     const currMonth = MONTHS[day.getMonth()];
     const currYear = day.getFullYear();
     this.setState({currentDate: `${currMonth} ${currDay}, ${currYear}`});
-    this.props.fetchCalendar(day.getDate());
+    this.props.fetchAllCalendars();
     this.getQuote();
     this.props.fetchPaths();
   }
@@ -53,8 +54,10 @@ class Calendar extends React.Component {
   workouts(){
     const nums = ["9 AM","10 AM","11 AM","12 PM","1 PM","2 PM","3 PM",
     "4 PM","5 PM","6 PM","7 PM","8 PM","9 PM"];
-    if (this.props.day.workouts) {
-      this.props.day.workouts.map((workout) => {
+    const day = new Date;
+    if (this.props.calendar[1]) {
+      this.day = this.props.calendar[day.getDate()];
+      this.day.workouts.map((workout) => {
         const fulltime = `${workout.time} ${workout.dayornight}`;
         if (nums.includes(fulltime)) {
           const sentence = `${workout.time} ${workout.dayornight}:  ${workout.title}`;
@@ -63,7 +66,6 @@ class Calendar extends React.Component {
         }
       });
     }
-    console.log(nums);
     return nums.map((num) => (
       <li key={nums.indexOf(num)}>{num}</li>
     ));
@@ -80,7 +82,7 @@ class Calendar extends React.Component {
               <div className="create-workout-calendar">
                 <h3>{this.state.currentDate}</h3>
                 <WorkoutCreateModal action={WorkoutCreateFormContainer}
-                  calendar={this.props.day} paths={this.props.path}/>
+                  calendar={this.props.calendar} paths={this.props.path}/>
               </div>
               <ul className="time-calendar">
                 {this.workouts()}

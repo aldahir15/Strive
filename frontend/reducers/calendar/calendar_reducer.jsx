@@ -5,7 +5,7 @@ const CalendarReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_ALL_CALENDARS:
-      return ({}, action.calendars);
+      return merge({}, action.calendars);
     case RECEIVE_CALENDAR:
       return merge({}, action.calendar );
     default:

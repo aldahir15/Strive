@@ -6,7 +6,8 @@ class WorkoutCreateForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {title: "", description: "", calendar_id: this.props.calendar.id,
+    this.handleDate = this.handleDate.bind(this);
+    this.state = {title: "", description: "", calendar_id: 0,
                   time: 9, dayornight: "AM", id: 0, path_id: 0};
   }
 
@@ -14,6 +15,16 @@ class WorkoutCreateForm extends React.Component {
     return (e) => {
       this.setState({[field]: e.target.value});
     };
+  }
+
+  handleDate(e){
+    console.log("CALENDARS", this.props);
+    const year = parseInt(e.target.value.slice(0,4));
+    const month = parseInt(e.target.value.slice(5,7));
+    const day = parseInt(e.target.value.slice(8,10));
+    let calendarId;
+    this.setState({calendar_id: this.props.calendars[day].id});
+    console.log(this.state);
   }
 
   handleSubmit(e){
@@ -55,6 +66,10 @@ class WorkoutCreateForm extends React.Component {
               <option value="AM" >AM</option>
               <option value="PM" >PM</option>
             </select>
+          </label>
+
+          <label>Description:
+            <input type="date" onChange={this.handleDate} />
           </label>
 
           <label>Path:
