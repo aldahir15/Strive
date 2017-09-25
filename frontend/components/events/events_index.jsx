@@ -19,7 +19,10 @@ class EventIndex extends React.Component {
           {Object.keys(this.props.events).map((indx) =>
             <li key={indx}>
               <img src={this.props.events[indx].image_url}/>
-              <p>{this.props.events[indx].title}</p>
+              <Link to={`events/${indx}`}>{this.props.events[indx].title}</Link>
+              <p>
+              {this.props.events[indx].calendar.day}
+              </p>
             </li>)}
         </ul>
       );
