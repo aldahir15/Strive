@@ -13,7 +13,7 @@ class CalendarIndex extends React.Component {
 
   calendarView(){
     const date = new Date;
-    let offset = ((date.getDay() + 6 % 7) - 2);
+    let offset = ((date.getDay() + 6 % 7) - 3);
     let newArr = [];
     const endingLastMonth = new Date(2017, date.getMonth(), 0).getDate();
     for (let i = 0; i < offset; i++) {

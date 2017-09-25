@@ -14,14 +14,12 @@ class Header extends React.Component {
   }
 
   componentDidMount(){
+    console.log(window);
     window.addEventListener("scroll", this.handleScroll);
   }
 
   handleScroll(){
-    const para = document.getElementsByClassName("parallax-boiz");
-    if (document.body.scrollTop > 700 || document.documentElement.scrollTop > 700) {
-      console.log("YUP");
-    }
+    console.log("SCROLLING");
   }
 
   loggedin(){

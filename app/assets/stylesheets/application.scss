@@ -26,13 +26,13 @@ body {
   background-position-y: 120px;
   background-size: 100%;
   background-repeat: no-repeat;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  margin: 8px 8px 0 0;
+  // overflow-x: hidden;
+  // overflow-y: hidden;
+  margin: 0 8px 0 0;
 }
 
 .login-header, .logout-header {
-  height: 100px;
+  height: 80px;
   display: flex;
   flex-direction: row-reverse;
   background: white;
@@ -67,8 +67,10 @@ body {
 	text-shadow:0px 0px 0px #ffffff;
   position: relative;
   right: 10px;
+  top: 20px;
   border-radius: 8px;
 }
+
 .myButton:hover {
 	// background-color:#fc4d02;
   color: red;
@@ -101,12 +103,13 @@ body {
   text-decoration: none;
   background-color: #fff;
   color: black;
-  padding:30px 60px;
+  padding: 20px 40px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   cursor: pointer;
+  margin-top: 7px;
 }
 
 .login-button {
@@ -116,15 +119,16 @@ body {
   text-decoration: none;
   background-color: #fc4d02;
   color: white;
-  padding:15px 20px;
+  padding:10px 20px;
   border-top: 1px solid #CCCCCC;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   cursor: pointer;
-  border-radius: 5px;
+  // border-radius: 5px;
   margin-right: 15px;
   margin-top: 20px;
+  transition: all 200ms linear;
 }
 
 .divider{
@@ -137,7 +141,7 @@ body {
   display: flex;
   margin: auto;
   width: 60%;
-  height: 65%;
+  height: 75%;
   justify-content: space-between;
 }
 
@@ -161,7 +165,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 80px;
-  overflow: none;
+  // overflow: none;
   text-align: center;
 }
 
@@ -195,7 +199,7 @@ body {
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
-  border-radius: 5px;
+  // border-radius: 5px;
   cursor: pointer;
   height: 50%;
   margin-top: 20px;
@@ -210,8 +214,8 @@ body {
 #root {
   background-size: 100%;
   background-repeat: no-repeat;
-  overflow-x: hidden;
-  height: 100%;
+  // overflow-x: hidden;
+  // height: 100%;
   display: flex;
   flex-direction: column;
 
@@ -219,15 +223,18 @@ body {
 
 
 .logged-off-greeting {
-  // background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
   background-size: 100%;
   background-repeat: no-repeat;
-  overflow-x: hidden;
-  height: 680px;
+  // overflow-x: hidden;
+  height: 800px;
   display: flex;
   flex-direction: column;
   font-family: 'Roboto Condensed', sans-serif;
   // background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg');
+}
+
+.parallax-boiz {
+  height: 800px;
 }
 
 .logo-img {
@@ -490,10 +497,29 @@ body {
   width: 400px;
 }
 
+.map-show-container {
+  margin: 0 auto;
+  height: 500px;
+  width: 700px;
+}
+
 .map-div .map-container {
   margin: 0;
-  height: 500px;
-  width: 80%;
+  height: 400px;
+  width: 100%;
+}
+
+.button-map-container button {
+  position: relative;
+  top: -10px;
+  left: 334px;
+}
+
+.button-map-container {
+  flex-flow: column;
+  position: relative;
+  top: -45px;
+  margin-bottom: -45px;
 }
 
 .explore-div{
@@ -511,7 +537,7 @@ body {
   display: flex;
   border: 1px solid black;
   width: 80%;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .home-container .react-parallax-content {
@@ -523,8 +549,8 @@ body {
   height: 50px;
   width: auto;
   position: relative;
-  top: 20px;
-  left: 30px;
+  top: 15px;
+  left: 25px;
 }
 
 .logout-header img:hover{
@@ -538,7 +564,7 @@ body {
 .button-map-container {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  flex: 3;
 }
 
 
@@ -589,4 +615,50 @@ body {
 .events-index img {
   width: 40%;
   height: auto;
+}
+
+.path-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.path-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  width: 100%;
+  position: relative;
+  left: -17%;
+  line-height: 30px;
+}
+
+.path-list li {
+  border: 1px solid black;
+  width: 101%;
+  cursor: pointer;
+}
+
+.path-list li:hover {
+  background-color: #0e2f44;
+  color: white;
+}
+
+.path-show {
+  width: 100%;
+  background-color: inherit;
+  cursor: pointer;
+  border: 0;
+}
+
+.path-show:hover {
+  color: white;
+}
+
+// EXTRA
+.hello-user {
+  padding-top: 35px !important;
 }

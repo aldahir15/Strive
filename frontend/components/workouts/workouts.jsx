@@ -40,7 +40,7 @@ class Workouts extends React.Component {
               Delete
             </button>
           </div>
-          <GMap />
+          <GMap workout={this.props.workout}/>
         </div>
       );
     }

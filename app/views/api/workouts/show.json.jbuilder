@@ -1,1 +1,1 @@
-json.extract! @workout, :title, :description, :calendar, :time, :dayornight, :id
+json.extract! @workout, :title, :description, :calendar, :time, :dayornight, :path, :id

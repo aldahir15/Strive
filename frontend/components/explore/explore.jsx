@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import PathCreateModal from '../map/PathCreateModal';
 import GMap from '../map/GMap';
+import MapModal from './MapModal';
 
 
 class Explore extends React.Component {
   constructor(props){
     super(props);
     this.update = this.update.bind(this);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {title: "", startingPos: {lat: 0, lng: 0},
                   endingPos: {lat: 0, lng: 0}, distance: ""};
   }
@@ -31,7 +33,9 @@ class Explore extends React.Component {
       return(
         <ul>
         {Object.keys(this.props.path).map((indx) =>
-          <li>{this.props.path[indx].title}</li>)}
+          <li>
+            <MapModal path={this.props.path[indx]}/>
+          </li>)}
           </ul>
         );
     } else {
@@ -39,8 +43,13 @@ class Explore extends React.Component {
     }
   }
 
+  handleClick(path){
+    return e => {
+      e.preventDefault();
+    };
+  }
+
   render(){
-    console.log(this.props);
     return(
       <div className="explore-div">
       <h1>EXPLORE</h1>
