@@ -17,8 +17,8 @@ import ScrollHeaderContainer from './header/scroll_header_container';
 const App = () => {
   return (
     <div>
-      <ScrollHeaderContainer />
-      <HeaderContainer />
+    <ScrollHeaderContainer />
+    <HeaderContainer />
       <Switch>
         <RequireLoginRoute exact path="/" component={GreetingContainer} />
         <RequireLoginRoute path="/login" component={SessionFormContainer} />

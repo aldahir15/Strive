@@ -61,20 +61,22 @@ class SessionForm extends React.Component {
   render(){
     return (
       <div className="session-form-div">
+        <div className="session-exit-button-container">
+          <img src = 'http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_54/v1506464706/9982_23980_cancel_close_exit_1_p3x21t.png'
+            onClick={this.props.closeModal}></img>
+        </div>
         <h1>{this.props.text}</h1>
         <form onSubmit={this.handleSubmit} className="session-form">
           {this.showErrors()}
-          <label><p>Username:</p>
-            <input type="text" onChange={this.update("username")} />
-          </label>
-
-          <label><p>Password:</p>
-            <input type="password" onChange={this.update("password")} />
-          </label>
-
+          <input type="text" onChange={this.update("username")}
+            placeholder="Username" className="session-inputs" />
+          <div className="height-divider"></div>
+          <input type="password" onChange={this.update("password")}
+            placeholder="Password" className="session-inputs" />
+          <div className="height-divider"></div>
           <input type="submit" value="Submit" className="submit-session"/>
+          {this.demoLogin()}
         </form>
-        {this.demoLogin()}
       </div>
     );
   }

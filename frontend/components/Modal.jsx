@@ -11,7 +11,10 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     overflow              : 'none',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    padding               : '0',
+    width                 : '30%',
+    'border-radius'       : '5px'
   }
 };
 
@@ -45,7 +48,7 @@ class AppModal extends React.Component {
     const classN = this.props.action === SignInFormContainer ? "login-button" : "signup-button";
     return (
       <div>
-        <button onClick={this.openModal} className={classN}>{text}</button>
+        <a onClick={this.openModal} className={classN}>{text}</a>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -54,7 +57,7 @@ class AppModal extends React.Component {
           contentLabel="Example Modal"
         >
 
-          <this.props.action text={text}/>
+          <this.props.action text={text} closeModal={this.closeModal}/>
         </Modal>
       </div>
     );

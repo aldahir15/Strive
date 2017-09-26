@@ -61,8 +61,8 @@ class Header extends React.Component {
     return (
       <div className="login-header">
         <AppModal action={SigninFormContainer} className="login-button"/>
-        <button className="demo-button" onClick={() =>
-          this.props.login({username: "demo", password: "password"})}>Demo Login</button>
+        <a className="demo-button" onClick={() =>
+          this.props.login({username: "demo", password: "password"})}>Demo Login</a>
         <div className="divider"></div>
         <AppModal action={SignupFormContainer} className="signup-button"/>
         <p>HERE TO JOIN?</p>
