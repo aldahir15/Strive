@@ -20,7 +20,6 @@ class Header extends React.Component {
 
   handleScroll(){
     if (document.body.scrollTop > 881 || document.documentElement.scrollTop > 881) {
-      console.log("YUP");
       // document.getElementsByClassName("scroll-login-header")[0].style.display = "flex";
       document.getElementsByClassName("scroll-login-header")[0].style.transform = "translate3d(0px, 0px, 0px)";
     } else {

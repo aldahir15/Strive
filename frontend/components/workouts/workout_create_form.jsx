@@ -18,13 +18,11 @@ class WorkoutCreateForm extends React.Component {
   }
 
   handleDate(e){
-    console.log("CALENDARS", this.props);
     const year = parseInt(e.target.value.slice(0,4));
     const month = parseInt(e.target.value.slice(5,7));
     const day = parseInt(e.target.value.slice(8,10));
     let calendarId;
     this.setState({calendar_id: this.props.calendars[day].id});
-    console.log(this.state);
   }
 
   handleSubmit(e){
@@ -34,7 +32,6 @@ class WorkoutCreateForm extends React.Component {
   }
 
   pathOptions(){
-    console.log("PATHS", this.props);
     if (this.props.paths) {
       return(
         Object.keys(this.props.paths).map((indx) =>
@@ -48,7 +45,6 @@ class WorkoutCreateForm extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <div className="update-form">
         <form onSubmit={this.handleSubmit}>

@@ -6,7 +6,6 @@ class PathForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    console.log("PATH FORM", this.props);
     this.state = this.props.state;
   }
 
@@ -29,7 +28,6 @@ class PathForm extends React.Component {
   }
 
   render(){
-    console.log(this.state);
     return(
       <div className="update-form">
         <form onSubmit={this.handleSubmit}>

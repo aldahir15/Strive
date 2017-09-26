@@ -5,7 +5,6 @@ class MarkerUtil {
   }
 
   updateMarkers(paths){
-    console.log("HEREHERE");
   }
 
 }

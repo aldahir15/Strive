@@ -43,9 +43,9 @@ class GoogleMap extends React.Component {
 
   render(){
     return(
-      <div>
-        <p>{this.props.workout.path.title}</p>
-        <p>{this.props.workout.path.distance}</p>
+      <div className="map-show-all">
+        <p>Title: {this.props.workout.path.title}</p>
+        <p>Distance: {this.props.workout.path.distance} mi.</p>
         <div className="map-show-container" ref="map">
           Map
         </div>

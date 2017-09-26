@@ -43,7 +43,6 @@ class WorkoutCreateModal extends React.Component {
   render() {
     const text = "+";
     const classN = "plus-form";
-    // console.log("MODAL STATE", this.props);
     return (
       <div>
         <button onClick={this.openModal} className={classN}>{text}</button>

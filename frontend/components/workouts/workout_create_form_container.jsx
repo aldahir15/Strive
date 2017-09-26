@@ -5,7 +5,6 @@ import { fetchAllCalendars } from '../../actions/calendar_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("STATE", state);
   const workout = {title: "", description: "", calendar_id: ""};
   const calendars = state.calendar;
   return {

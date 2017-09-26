@@ -59,7 +59,6 @@ class GoogleMap extends React.Component {
             directionsDisplay.setMap(this.map);
           });
       } else if(this.props.workout.path) {
-        console.log("SOMETHING SOMETHING");
         const map = this.refs.map;
         const mapOptions = {
           center: {
@@ -126,7 +125,6 @@ class GoogleMap extends React.Component {
   }
 
   render(){
-    console.log("YUP");
     return(
       <div className="button-map-container">
         {this.renderButton()}

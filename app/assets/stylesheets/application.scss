@@ -184,10 +184,6 @@ body {
 	// background-color:#fc4d02;
   color: red;
 }
-.myButton:active {
-	position:relative;
-	top:1px;
-}
 
 .button {
   display: flex;
@@ -608,8 +604,14 @@ body {
 
 .map-show-container {
   margin: 0 auto;
-  height: 500px;
-  width: 700px;
+  height: 400px;
+  width: 600px;
+}
+
+.map-show-all {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .map-div .map-container {

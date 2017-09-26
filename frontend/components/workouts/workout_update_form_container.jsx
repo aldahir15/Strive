@@ -6,7 +6,6 @@ import {withRouter} from 'react-router-dom';
 const mapStateToProps = (state, ownProps) => {
   let workout = {title: "", description: "", calendar_id: ""};
   if (ownProps.match.params.workoutId) {
-    console.log(state.workout);
     workout = state.workout;
   }
   return {
