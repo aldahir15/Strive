@@ -8,8 +8,8 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemo = this.handleDemo.bind(this);
 
-    this.state = {username: "",
-                  password: ""};
+    this.state = {username: this.props.user.username,
+                  password: this.props.user.password};
   }
 
   componentWillReceiveProps(nextProps) {
@@ -58,6 +58,12 @@ class SessionForm extends React.Component {
       </button>);
   }
 
+  submitDemo(){
+    setTimeout(() => {
+      document.getElementsByClassName("submit-session")[0].click();
+    }, 1000);
+  }
+
   render(){
     return (
       <div className="session-form-div">
@@ -69,13 +75,13 @@ class SessionForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="session-form">
           {this.showErrors()}
           <input type="text" onChange={this.update("username")}
-            placeholder="Username" className="session-inputs" />
+            placeholder="Username" className="session-inputs" value={this.state.username} />
           <div className="height-divider"></div>
           <input type="password" onChange={this.update("password")}
-            placeholder="Password" className="session-inputs" />
+            placeholder="Password" className="session-inputs" value={this.state.password} />
           <div className="height-divider"></div>
           <input type="submit" value="Submit" className="submit-session"/>
-          {this.demoLogin()}
+          {this.props.text === "Demo Log In" ? this.submitDemo() : this.demoLogin()}
         </form>
       </div>
     );

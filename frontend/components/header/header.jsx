@@ -61,8 +61,7 @@ class Header extends React.Component {
     return (
       <div className="login-header">
         <AppModal action={SigninFormContainer} className="login-button"/>
-        <a className="demo-button" onClick={() =>
-          this.props.login({username: "demo", password: "password"})}>Demo Login</a>
+        <AppModal className="demo-button" action={SigninFormContainer} demo={true}/>
         <div className="divider"></div>
         <AppModal action={SignupFormContainer} className="signup-button"/>
         <p>HERE TO JOIN?</p>
@@ -75,3 +74,6 @@ class Header extends React.Component {
   }
 }
 export default Header;
+
+//onClick={() =>
+//  this.props.login({username: "demo", password: "password"})}
