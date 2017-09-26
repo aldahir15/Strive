@@ -88,6 +88,36 @@ body {
   height: 40px;
   width: auto;
 }
+
+.carrot-container p {
+  font-family: 'MaisonNeue', 'Helvetica', Arial, sans-serif;
+  text-align: center;
+  padding-top: 15%;
+  color: white;
+}
+
+.carrot {
+  background-image: url('http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506458943/carrot2_jdt0ib.svg');
+  position: relative;
+  height: 20px;
+  width: 30px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  top: -6px;
+  background-size: 100%;
+  opacity: 1;
+  transition-property: all;
+  transition-duration: 12s;
+  transition-timing-function: cubic-bezier(0.27, 0, 0.4, 1);
+  transition-delay: initial;
+  animation-duration: 2s;
+  animation-timing-function: initial;
+  animation-delay: initial;
+  animation-iteration-count: infinite;
+  animation-direction: initial;
+  animation-fill-mode: initial;
+  animation-play-state: initial;
+}
 ///
 
 //1. WHY-US

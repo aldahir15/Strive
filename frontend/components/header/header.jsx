@@ -11,10 +11,14 @@ class Header extends React.Component {
   constructor(props){
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
   componentDidMount(){
-    window.addEventListener("scroll", this.handleScroll);
+    console.log(this.props.history);
+    if (!this.props.user) {
+      window.addEventListener("scroll", this.handleScroll);
+    }
     // window.removeEventListener("scroll", this.handleScroll);
   }
 
@@ -28,11 +32,16 @@ class Header extends React.Component {
     }
   }
 
+  logout(){
+    console.log(this.props.history);
+    this.props.logout();
+  }
+
   loggedin(){
     return (
       <div className="logout-header">
         <div className="button-container">
-          <Link to="#" className="myButton" onClick={this.props.logout}>Log Out</Link>
+          <Link to="#" className="myButton" onClick={this.logout}>Log Out</Link>
         </div>
         <p className="hello-user">HELLO {this.props.user.username}</p>
         <div className="divider2"></div>

@@ -20,6 +20,10 @@ class Greeting extends React.Component {
           <h3>become a better you</h3>
 
         </div>
+        <div className="carrot-container">
+          <p>Explore Strive</p>
+          <div className="carrot"></div>
+        </div>
       </Parallax>
       <Parallax strength={400} className="parallax-show-1">
         <div className="why-us">
