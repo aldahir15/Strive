@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import PathCreateModal from '../map/PathCreateModal';
-import GMap from '../map/GMap';
+import GMap from '../map/Gmap';
 import MapModal from './MapModal';
 
 
