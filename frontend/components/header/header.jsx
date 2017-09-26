@@ -10,26 +10,7 @@ import SignupFormContainer from '../session_form/signup_form_container';
 class Header extends React.Component {
   constructor(props){
     super(props);
-    this.handleScroll = this.handleScroll.bind(this);
     this.logout = this.logout.bind(this);
-  }
-
-  componentDidMount(){
-    console.log(this.props.history);
-    if (!this.props.user) {
-      window.addEventListener("scroll", this.handleScroll);
-    }
-    // window.removeEventListener("scroll", this.handleScroll);
-  }
-
-  handleScroll(){
-    if (document.body.scrollTop > 881 || document.documentElement.scrollTop > 881) {
-      // document.getElementsByClassName("scroll-login-header")[0].style.display = "flex";
-      document.getElementsByClassName("scroll-login-header")[0].style.transform = "translate3d(0px, 0px, 0px)";
-    } else {
-      // document.getElementsByClassName("scroll-login-header")[0].style.display = "none";
-      document.getElementsByClassName("scroll-login-header")[0].style.transform = "translate3d(0, -150%, 0)";
-    }
   }
 
   logout(){

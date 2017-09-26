@@ -58,7 +58,7 @@ body {
   background: white;
   // border-bottom: 1px solid black;
   z-index: 9999999999;
-  transform: translate3d(0, -150%, 0);
+  transform: translate3d(0, -300%, 0);
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0, 1.085, 0.4, 1);
@@ -69,11 +69,11 @@ body {
   font-family: 'MaisonNeue', 'Helvetica', Arial, sans-serif;
   font-weight: 700;
   cursor: pointer;
-  font-size:15px;
+  font-size:14px;
   text-decoration: none;
   background-color: #fff;
   color: #fc4c02;
-  padding:20px 20px 0 20px;
+  padding:15px 20px 0 20px;
 }
 
 .scroll-login-link:hover, .scroll-signup-link:hover, .scroll-demo-button:hover {
