@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
     resources :paths, only: [:index, :create, :update, :destroy]
     resources :events, only: [:index, :create, :update, :show, :destroy]
+    resources :quotes, only: [:show]
   end
 end

@@ -38,8 +38,7 @@ class Calendar extends React.Component {
 
   getQuote(){
     fetchQuote().then((result) => {
-      console.log("RESULT",result);
-      this.setState({quote: result.quoteText});
+      this.setState({quote: result.quote});
     });
   }
 
