@@ -910,3 +910,15 @@ body {
   font-size: small;
   left: 200px;
 }
+
+.event-create-button {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 30px;
+}
+
+.event-create-button button {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
