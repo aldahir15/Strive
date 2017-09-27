@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import Typist from 'react-typist';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -61,30 +63,68 @@ class SessionForm extends React.Component {
   submitDemo(){
     setTimeout(() => {
       document.getElementsByClassName("submit-session")[0].click();
-    }, 1000);
+    }, 3000);
   }
 
   render(){
-    return (
-      <div className="session-form-div">
+    if (this.props.text === "Demo Log In") {
+      return (
+        <div className="session-form-div">
         <div className="session-exit-button-container">
-          <img src = 'http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_54/v1506464706/9982_23980_cancel_close_exit_1_p3x21t.png'
-            onClick={this.props.closeModal}></img>
+        <img src = 'http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_54/v1506464706/9982_23980_cancel_close_exit_1_p3x21t.png'
+        onClick={this.props.closeModal}></img>
         </div>
         <h1>{this.props.text}</h1>
         <form onSubmit={this.handleSubmit} className="session-form">
-          {this.showErrors()}
-          <input type="text" onChange={this.update("username")}
-            placeholder="Username" className="session-inputs" value={this.state.username} />
-          <div className="height-divider"></div>
-          <input type="password" onChange={this.update("password")}
-            placeholder="Password" className="session-inputs" value={this.state.password} />
-          <div className="height-divider"></div>
-          <input type="submit" value="Submit" className="submit-session"/>
-          {this.props.text === "Demo Log In" ? this.submitDemo() : this.demoLogin()}
+        {this.showErrors()}
+
+        <div className="session-inputs-demo">
+        <Typist
+        className="TypistExample-header"
+        avgTypingSpeed={25}
+        startDelay={500}
+        cursor={{show: false}}>
+        <p>{this.state.username}</p>
+        </Typist>
+        </div>
+        <div className="height-divider"></div>
+        <div className="session-inputs-demo">
+        <Typist
+        className="TypistExample-header"
+        avgTypingSpeed={25}
+        startDelay={1200}
+        cursor={{show: false}}>
+        <p>********</p>
+        </Typist>
+        </div>
+        <div className="height-divider"></div>
+        <input type="submit" value="Submit" className="submit-session"/>
+        {this.props.text === "Demo Log In" ? this.submitDemo() : this.demoLogin()}
         </form>
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return (
+        <div className="session-form-div">
+        <div className="session-exit-button-container">
+        <img src = 'http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_54/v1506464706/9982_23980_cancel_close_exit_1_p3x21t.png'
+        onClick={this.props.closeModal}></img>
+        </div>
+        <h1>{this.props.text}</h1>
+        <form onSubmit={this.handleSubmit} className="session-form">
+        {this.showErrors()}
+        <input type="text" onChange={this.update("username")}
+        placeholder="Username" className="session-inputs" value={this.state.username} />
+        <div className="height-divider"></div>
+        <input type="password" onChange={this.update("password")}
+        placeholder="Password" className="session-inputs" value={this.state.password} />
+        <div className="height-divider"></div>
+        <input type="submit" value="Submit" className="submit-session"/>
+        {this.props.text === "Demo Log In" ? this.submitDemo() : this.demoLogin()}
+        </form>
+        </div>
+      );
+    }
   }
 
 }

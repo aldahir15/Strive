@@ -366,11 +366,27 @@ body {
   border: 1px solid grey;
   background-color: black;
   color: white;
+  text-align: left;
 }
 
 .session-inputs:focus {
   background-color: white;
   color: black;
+}
+
+.session-inputs-demo {
+  width: 70%;
+  height: 30px;
+  border: 1px solid grey;
+  background-color: black;
+  color: white;
+  text-align: left;
+}
+
+.session-inputs-demo p {
+  position: relative;
+  bottom: 5px;
+  left: 5px;
 }
 
 .demo-button {
