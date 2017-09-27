@@ -277,7 +277,7 @@ body {
   display: flex;
   margin: auto;
   width: 60%;
-  height: 75%;
+  height: 90%;
   justify-content: space-between;
 }
 
@@ -611,15 +611,17 @@ body {
   text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  background-color: white;
-  color: grey;
+  background-color: #fc4c02;
+  color: white;
   cursor: pointer;
+  border: 0;
 }
 
 .plus-form:hover {
   font-size: 14px;
-  background-color: grey;
-  color: white;
+  background-color: white;
+  color: #fc4c02;
+  border: 1px solid black;
 }
 // CALENDAR-INDEX
 
@@ -738,9 +740,10 @@ body {
 
 .map-div {
   display: flex;
-  border: 1px solid black;
+  border: 2px solid black;
   width: 80%;
   justify-content: space-evenly;
+  border-radius: 5px;
 }
 
 .home-container .react-parallax-content {
@@ -781,6 +784,11 @@ body {
   cursor: pointer;
   margin-right: 5px;
   margin-top: 5px;
+}
+
+.button-map-container button:hover {
+  background-color: white;
+  color: #0171b7;
 }
 
 .button-map-container button:disabled {
@@ -864,4 +872,10 @@ body {
 // EXTRA
 .hello-user {
   padding-top: 35px !important;
+}
+
+.explore-description {
+  position: relative;
+  font-size: small;
+  left: 200px;
 }

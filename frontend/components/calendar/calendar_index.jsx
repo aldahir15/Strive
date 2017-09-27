@@ -13,16 +13,16 @@ class CalendarIndex extends React.Component {
 
   calendarView(){
     const date = new Date;
-    let offset = ((date.getDay() + 6 % 7) - 3);
+    let offset = ((date.getDay() + 6 % 7) - 4);
     let newArr = [];
     const endingLastMonth = new Date(2017, date.getMonth(), 0).getDate();
     for (let i = 0; i < offset; i++) {
       newArr.push(endingLastMonth-i);
     }
     newArr = newArr.reverse();
-    const MONTHS = [ "Jan", "Feb", "Mar", "Apr",
-              "May", "Jun", "July", "Aug",
-            "Sep", "Oct", "Nov", "Dec"];
+    const MONTHS = [ "January", "Feburary", "March", "April",
+              "May", "June", "July", "August",
+            "September", "October", "November", "December"];
     if (Object.keys(this.props.calendars).length > 20) {
       return(
         <div>

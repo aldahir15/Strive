@@ -74,7 +74,7 @@ class Calendar extends React.Component {
   render(){
     return(
       <div className="home-container">
-        <Parallax bgImage="http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506015669/artur-pokusin-737_jcwwjo.jpg" strength={400} className="home">
+        <Parallax strength={400} className="home">
           <div className="day-calendar-container">
             <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
             <div className="home-calendar">

@@ -53,10 +53,13 @@ class Explore extends React.Component {
     return(
       <div className="explore-div">
       <h1>EXPLORE</h1>
+      <p className="explore-description">
+      To add a path, please click on two locations on the map.
+      </p>
       <PathCreateModal state={this.state}/>
         <div className="map-div">
           <div className="path-list">
-          <p>PATHS HERE</p>
+          <p>PATHS</p>
           {this.pathList()}
           </div>
           <GMap action={this.update}/>

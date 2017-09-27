@@ -12,6 +12,8 @@ import WorkoutUpdateFormContainer from './workouts/workout_update_form_container
 import CalendarIndexContainer from './calendar/calendar_index_container';
 import ExploreContainer from './explore/explore_container';
 import EventsIndexContainer from './events/events_index_container';
+import EventShowContainer from './events/event_show_container';
+
 
 const App = () => {
   return (
@@ -27,7 +29,7 @@ const App = () => {
         <LoggedinRoute path="/train" component={CalendarIndexContainer} />
         <LoggedinRoute path="/explore" component={ExploreContainer} />
         <LoggedinRoute path="/connect" component={EventsIndexContainer} />
-
+        <LoggedinRoute path="/events/:eventId" component={EventShowContainer} />
       </Switch>
     </div>
   );
