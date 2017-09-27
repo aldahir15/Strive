@@ -1,3 +1,15 @@
+User.create!([
+  {username: "hello9", password_digest: "$2a$10$D13c55WR93Bkel8FxKnhiuzagXCj6x9Y7lhL/ybzjEJ97.hp8JGpy", session_token: "nnX99gxGElc5ht-pIlwxdw", event_ids: []},
+  {username: "guest", password_digest: "$2a$10$RsCDXfmULM3Lbjfae4nIX.KTpDIKxzxmoiwILGPP52s26GddtIzOK", session_token: "x8ZmJPPj5dBSXxhpP_7mWw", event_ids: []},
+  {username: "'guest'", password_digest: "$2a$10$HPnQM9fdmfu5.HYmaqhUMeZLoom8DfV.yXVEVGppt8uDRdyMFhGqq", session_token: "3sjvW1rX3t_JLBYEVm38aw", event_ids: []},
+  {username: "doesitwork", password_digest: "$2a$10$RpLJRTlR4MSJcXsozMqI5eJMKMpDNxglvp6tAZxBQGzw7RNjFXzpm", session_token: "aTiLuY_TDwzzl1hO0DBjCw", event_ids: []},
+  {username: "hello7", password_digest: "$2a$10$tAoCSkKKSD8pQ41xb6WjhOzOywgyLTIByM0o30uA713lCRpAw9epm", session_token: "wgLqJgI1DWVR5sAacaEatg", event_ids: []},
+  {username: "hello", password_digest: "$2a$10$Wo2u68hXRvG7LwYvw..U2e2u0gFswiDOZBZLvXdlgXYGwNJB99QVC", session_token: "5ak_EHcG_HINQwtx3V-AZQ", event_ids: []},
+  {username: "hello2", password_digest: "$2a$10$xLlhUPvOhtL/J0f3hq8nK.GIHwHMMuP2U3VxzAeKuZmzymj3mPBfu", session_token: "_elP6m7lqk_Ii297Iaxqcg", event_ids: []},
+  {username: "something", password_digest: "$2a$10$u2ZLYySotDpdY2CvkECu1.BBo1k0eNbnDOxnVGbABL5Pu4HihMyFW", session_token: "G9OICKXNZ0FdbGE6ZazHPg", event_ids: []},
+  {username: "example", password_digest: "$2a$10$d2/ipVUNCOLfDr8xOCPoq.vVow3lhOvB8sjwBhnF9mP95tc.1DL4W", session_token: "_0Kyitzx9SqS3fElNcYZkQ", event_ids: []},
+  {username: "demo", password_digest: "$2a$10$wBRoUYUZZ24qqf7LknL68..7ZkjkL9hI3q0Bt2k.jbp3pPBzM/FaC", session_token: "6Z66mzZp2S3rbHO7ptr74w", event_ids: []}
+  ])
 Calendar.create!([
   {user_id: 38, day: 1, month: 9, year: 2017},
   {user_id: 38, day: 2, month: 9, year: 2017},
@@ -97,18 +109,6 @@ Quote.create!([
   {quote: "Don’t raise your voice, improve your argument. ~Anonymous"},
   {quote: "What seems to us as bitter trials are often blessings in disguise.~ Oscar Wilde"},
   {quote: "The meaning of life is to find your gift. The purpose of life is to give it away. ~Anonymous"}
-])
-User.create!([
-  {username: "hello9", password_digest: "$2a$10$D13c55WR93Bkel8FxKnhiuzagXCj6x9Y7lhL/ybzjEJ97.hp8JGpy", session_token: "nnX99gxGElc5ht-pIlwxdw", event_ids: []},
-  {username: "guest", password_digest: "$2a$10$RsCDXfmULM3Lbjfae4nIX.KTpDIKxzxmoiwILGPP52s26GddtIzOK", session_token: "x8ZmJPPj5dBSXxhpP_7mWw", event_ids: []},
-  {username: "'guest'", password_digest: "$2a$10$HPnQM9fdmfu5.HYmaqhUMeZLoom8DfV.yXVEVGppt8uDRdyMFhGqq", session_token: "3sjvW1rX3t_JLBYEVm38aw", event_ids: []},
-  {username: "doesitwork", password_digest: "$2a$10$RpLJRTlR4MSJcXsozMqI5eJMKMpDNxglvp6tAZxBQGzw7RNjFXzpm", session_token: "aTiLuY_TDwzzl1hO0DBjCw", event_ids: []},
-  {username: "hello7", password_digest: "$2a$10$tAoCSkKKSD8pQ41xb6WjhOzOywgyLTIByM0o30uA713lCRpAw9epm", session_token: "wgLqJgI1DWVR5sAacaEatg", event_ids: []},
-  {username: "hello", password_digest: "$2a$10$Wo2u68hXRvG7LwYvw..U2e2u0gFswiDOZBZLvXdlgXYGwNJB99QVC", session_token: "5ak_EHcG_HINQwtx3V-AZQ", event_ids: []},
-  {username: "hello2", password_digest: "$2a$10$xLlhUPvOhtL/J0f3hq8nK.GIHwHMMuP2U3VxzAeKuZmzymj3mPBfu", session_token: "_elP6m7lqk_Ii297Iaxqcg", event_ids: []},
-  {username: "something", password_digest: "$2a$10$u2ZLYySotDpdY2CvkECu1.BBo1k0eNbnDOxnVGbABL5Pu4HihMyFW", session_token: "G9OICKXNZ0FdbGE6ZazHPg", event_ids: []},
-  {username: "example", password_digest: "$2a$10$d2/ipVUNCOLfDr8xOCPoq.vVow3lhOvB8sjwBhnF9mP95tc.1DL4W", session_token: "_0Kyitzx9SqS3fElNcYZkQ", event_ids: []},
-  {username: "demo", password_digest: "$2a$10$wBRoUYUZZ24qqf7LknL68..7ZkjkL9hI3q0Bt2k.jbp3pPBzM/FaC", session_token: "6Z66mzZp2S3rbHO7ptr74w", event_ids: []}
 ])
 Workout.create!([
   {title: "Going for a run", description: nil, user_id: 2, calendar_id: 505, time: 10, dayornight: "AM", path_id: nil},

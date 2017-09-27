@@ -17,6 +17,10 @@ class EventCreate extends React.Component {
     };
   }
 
+  componentDidMount(){
+    this.props.fetchAllCalendars();
+  }
+
   handleDate(e){
     const year = parseInt(e.target.value.slice(0,4));
     const month = parseInt(e.target.value.slice(5,7));
@@ -32,6 +36,7 @@ class EventCreate extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     return(
       <div className="update-form">
         <h1>Create An Event</h1>
