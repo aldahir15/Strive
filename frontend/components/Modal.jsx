@@ -49,7 +49,7 @@ class AppModal extends React.Component {
     let user;
     if (this.props.demo) {
       text = "Demo Log In";
-      classN = "login-button";
+      classN = "demo-login-button";
       user = {username: "demo", password: "password"};
     }
     else if (this.props.action === SignInFormContainer) {

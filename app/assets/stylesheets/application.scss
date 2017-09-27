@@ -267,6 +267,21 @@ body {
   transition: all 200ms linear;
 }
 
+.demo-login-button {
+  display: flex;
+  font-family:Trebuchet MS;
+  font-size:15px;
+  text-decoration: none;
+  background-color: #fc4d02;
+  color: white;
+  padding:10px 20px;
+  cursor: pointer;
+  // border-radius: 5px;
+  margin-right: 15px;
+  margin-top: 20px;
+  transition: all 200ms linear;
+}
+
 .divider{
   width:350px;
   height:auto;

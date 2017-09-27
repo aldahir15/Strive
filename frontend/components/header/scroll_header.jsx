@@ -19,8 +19,8 @@ class Header extends React.Component {
       className="scroll-signup-link">Log In</a>
         <a onClick={() => document.getElementsByClassName("signup-button")[0].click()}
         className="scroll-login-link">Sign Up</a>
-        <a className="scroll-demo-button" onClick={() =>
-          this.props.login({username: "demo", password: "password"})}>Demo Login</a>
+        <a className="scroll-demo-button" onClick={() => document.getElementsByClassName("demo-login-button")[0].click()}>
+          Demo Login</a>
         <div className="scroll-divider"></div>
         <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png"/>
       </div>
