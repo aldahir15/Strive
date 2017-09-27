@@ -1,6 +1,10 @@
 class Api::WorkoutsController < ApplicationController
   before_action :require_login
 
+  def index
+    @workouts = Workout.where(user_id: current_user.id)
+  end
+
   def create
     @workout = Workout.new(workout_params)
     @workout.user_id = current_user.id

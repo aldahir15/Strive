@@ -5,7 +5,7 @@ import {fetchQuote} from '../../util/quote_api_util';
 import WorkoutCreateModal from '../workouts/WorkoutCreateModal';
 import WorkoutCreateFormContainer from '../workouts/workout_create_form_container';
 import { Parallax } from 'react-parallax';
-
+import ProgressBar from 'react-progressbar.js';
 
 class Calendar extends React.Component {
 
@@ -27,6 +27,7 @@ class Calendar extends React.Component {
     this.props.fetchAllCalendars();
     this.getQuote();
     this.props.fetchPaths();
+    this.props.fetchWorkouts();
   }
 
   dayOfWeek(){
@@ -72,6 +73,30 @@ class Calendar extends React.Component {
   }
 
   render(){
+    const day = new Date;
+    console.log(this.props.calendar);
+    let workoutAmt;
+    let eventAmt;
+    if ( Object.keys(this.props.workouts).length > 1) {
+       workoutAmt = `${Object.keys(this.props.workouts).length} Workouts`;
+       eventAmt = `${this.props.calendar[day.getDate()].user.event_ids.length} Events`;
+    }
+    const Circle = ProgressBar.Circle;
+    const options = {
+        strokeWidth: 5,
+        color: '#fc4c02',
+        trailWidth: 1,
+        easing: 'easeInOut',
+        duration: 1400,
+    };
+    const containerStyle = {
+          width: '200px',
+          height: '200px',
+          top: '150px',
+          position: 'relative',
+          left: '5%'
+      };
+    const progress = 1;
     return(
       <div className="home-container">
         <Parallax strength={400} className="home">
@@ -88,7 +113,27 @@ class Calendar extends React.Component {
               </ul>
             </div>
           </div>
-          {this.renderQuote()}
+          <div className="quote-progress-div">
+            {this.renderQuote()}
+            <div className="progress-div">
+              <Circle
+                progress={progress}
+                text={workoutAmt}
+                options={options}
+                initialAnimate={true}
+                containerStyle={containerStyle}
+                containerClassName={'.progressbar'}
+              />
+              <Circle
+                progress={progress}
+                text={eventAmt}
+                options={options}
+                initialAnimate={true}
+                containerStyle={containerStyle}
+                containerClassName={'.progressbar'}
+              />
+            </div>
+          </div>
         </Parallax>
       </div>
     );

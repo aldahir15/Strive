@@ -1059,3 +1059,19 @@ body {
 .event-indx-info a:hover {
   color: red;
 }
+
+//
+.quote-progress-div{
+  display: flex;
+  flex-flow: column;
+}
+
+.progressbar-text {
+  // bottom: 100px !important;
+}
+
+.progress-div {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
