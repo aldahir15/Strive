@@ -608,6 +608,65 @@ body {
 .update-form {
   display: flex;
   flex-direction: column;
+  // width: 100%;
+  // padding: 0 80px;
+  // // overflow: none;
+  text-align: center;
+  font-size: 14px;
+  min-height: 40px;
+  padding: 12px 10px;
+  transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  background: rgba(0,0,0,0.5);
+  border: 1px solid #666;
+  color: #CCC;
+  margin: 6px 0;
+  width: 94%;
+  text-align: -webkit-center;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.update-form input, .update-form textarea {
+  width: 95%;
+}
+
+.update-form select {
+  width: 100%;
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: url(http://i62.tinypic.com/15xvbd5.png), -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  font-size: inherit;
+  margin: 20px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+}
+
+.update-form label {
+  display: flex;
+  flex-direction: column;
+  text-align: -webkit-auto;
+}
+
+.time-select {
+  display: flex;
+  flex-direction: row;
+}
+
+.time-select select{
+  width: 30%;
 }
 
 .update-form form {
@@ -874,7 +933,7 @@ body {
   width: max-content;
   width: 100%;
   position: relative;
-  left: -17%;
+  left: -16%;
   line-height: 30px;
 }
 

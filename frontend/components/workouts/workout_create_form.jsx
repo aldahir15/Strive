@@ -57,11 +57,13 @@ class WorkoutCreateForm extends React.Component {
           </label>
 
           <label>Time:
-            <input type="number" onChange={this.update("time")} value={this.state.time} />
-            <select onChange={this.update("dayornight")}>
-              <option value="AM" >AM</option>
-              <option value="PM" >PM</option>
-            </select>
+            <div className="time-select">
+              <input type="number" onChange={this.update("time")} value={this.state.time} />
+              <select onChange={this.update("dayornight")}>
+                <option value="AM" >AM</option>
+                <option value="PM" >PM</option>
+              </select>
+            </div>
           </label>
 
           <label>Description:

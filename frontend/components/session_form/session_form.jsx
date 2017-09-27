@@ -62,8 +62,12 @@ class SessionForm extends React.Component {
 
   submitDemo(){
     setTimeout(() => {
+      document.getElementsByClassName("submit-session")[0].style.color = "red";
+      document.getElementsByClassName("submit-session")[0].style.backgroundColor = "white";
+      setTimeout(() => {
       document.getElementsByClassName("submit-session")[0].click();
-    }, 3000);
+      }, 500);
+    }, 2500);
   }
 
   render(){
