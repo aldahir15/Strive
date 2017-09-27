@@ -77,7 +77,7 @@ class WorkoutCreateForm extends React.Component {
           </label>
 
 
-          <input type="submit" value="Create Workout" />
+          <input className="submit-create" type="submit" value="Create Workout" />
         </form>
       </div>
     );

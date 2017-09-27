@@ -12,6 +12,7 @@ class CalendarIndex extends React.Component {
   }
 
   calendarView(){
+    console.log(this.props);
     const date = new Date;
     let offset = ((date.getDay() + 6 % 7) - 4);
     let newArr = [];

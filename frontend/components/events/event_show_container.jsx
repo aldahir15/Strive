@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchEvent: (id) => dispatch(fetchEvent(id)),
+  fetchEvents: () => dispatch(fetchEvents()),
   deleteEvent: (id) => dispatch(deleteEvent(id))
 });
 

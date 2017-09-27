@@ -347,6 +347,7 @@ body {
 }
 
 .submit-session {
+  transition: all 0.25s;
   margin-top: 25px;
   background-color: #fc4d02;
   border: none;
@@ -619,8 +620,8 @@ body {
   -o-transition: all 0.1s linear;
   -ms-transition: all 0.1s linear;
   background: rgba(0,0,0,0.5);
-  border: 1px solid #666;
-  color: #CCC;
+  border: 1px solid black;
+  color: black;
   margin: 6px 0;
   width: 94%;
   text-align: -webkit-center;
@@ -630,6 +631,27 @@ body {
 
 .update-form input, .update-form textarea {
   width: 95%;
+}
+
+.submit-create, .submit-update {
+  border-style: outset;
+  transition: all 0.25s;
+  border-radius: 5px;
+  border-width: 1px;
+  padding: 7px;
+  color: white;
+  height: 40px;
+  margin: 15px 0;
+  min-height: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  background-color: #fc4d02;
+  cursor: pointer;
+  padding-right: 14px;
+}
+
+.submit-create:hover, .submit-update:hover {
+  background-color: white;
+  color: #fc4d02;
 }
 
 .update-form select {
@@ -646,12 +668,11 @@ body {
   border: 1px solid #AAA;
   color: #555;
   font-size: inherit;
-  margin: 20px;
+  margin: 0;
   overflow: hidden;
   padding: 5px 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 300px;
 }
 
 .update-form label {
@@ -666,7 +687,8 @@ body {
 }
 
 .time-select select{
-  width: 30%;
+  font-size: 10px;
+  width: 40%;
 }
 
 .update-form form {
@@ -698,6 +720,7 @@ body {
 }
 
 .plus-form {
+  transition: all 0.25s;
   text-align: center;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
@@ -980,4 +1003,26 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 5px;
+}
+
+.event-parallax {
+  height: 300px;
+  box-shadow: 0px 13px 26px 0px rgba(0,0,0,0.1);
+}
+
+.event-show h1 {
+  font-family: 'MaisonNeue', 'Helvetica', Arial, sans-serif;
+  font-weight: 700;
+  padding-left: 15px;
+  text-transform: uppercase;
+  font-size: 300%;
+}
+
+.event-show img {
+  height: 400px !important;
+  width: auto !important;
+}
+
+.event-show-info {
+  background-color: white;
 }
