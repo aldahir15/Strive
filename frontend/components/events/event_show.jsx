@@ -17,12 +17,14 @@ class EventShow extends React.Component {
       const event = this.props.events[this.props.match.params.eventId];
       return(
         <div className="event-show">
-        <Parallax bgImage={event.image_url} strength={400} className="event-parallax">
+        <Parallax bgImage={event.image_url} strength={1900} className="event-parallax">
         <h1>{event.title}</h1>
         </Parallax>
         <div className="event-show-info">
-        <h4>Description: {event.description}</h4>
-        <h4>Date: {event.calendar.month}/{event.calendar.day}/{event.calendar.year}</h4>
+        <h4>Description:</h4>
+        <p>{event.description}</p>
+        <h4>Date: </h4>
+        <p>{event.calendar.month}/{event.calendar.day}/{event.calendar.year}</p>
         </div>
         </div>
       );

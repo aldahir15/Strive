@@ -922,6 +922,7 @@ body {
   display: flex;
   flex-direction: row;
   text-align: -webkit-center;
+  justify-content: space-evenly;
 }
 
 .events-index li {
@@ -937,8 +938,8 @@ body {
 }
 
 .events-index img {
-  width: 40%;
-  height: auto;
+  // width: 40%;
+  // height: auto;
 }
 
 .path-list {
@@ -1012,17 +1013,49 @@ body {
 
 .event-show h1 {
   font-family: 'MaisonNeue', 'Helvetica', Arial, sans-serif;
-  font-weight: 700;
+  font-weight: 900;
   padding-left: 15px;
   text-transform: uppercase;
-  font-size: 300%;
+  font-size: 220%;
+  color: #303030;
 }
 
 .event-show img {
-  height: 400px !important;
-  width: auto !important;
+  position: relative;
+  // height: 400px !important;
+  // width: auto !important;
 }
 
 .event-show-info {
+  font-family: 'MaisonNeue', 'Helvetica', Arial, sans-serif;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: -webkit-center;
+  line-height: 1;
+}
+
+.event-show-info  h4, .event-show-info p {
+  width: 10%;
+  display: flex;
+  float: left;
+}
+
+.event-indx-image {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+}
+
+.event-indx-info {
+  line-height: 5px;
+  padding-top: 15px;
+}
+
+.event-indx-info a {
+  text-decoration: none;
+}
+
+.event-indx-info a:hover {
+  color: red;
 }
