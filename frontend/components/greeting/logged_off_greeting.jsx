@@ -36,7 +36,7 @@ class Greeting extends React.Component {
     return (
     <div>
       <ScrollHeaderContainer />
-      <Parallax bgImage="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944281/run2_hkujiy.jpg" strength={400} className="logged-off-greeting">
+      <Parallax bgImage="http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506478414/running_u0bqnl.jpg" strength={400} className="logged-off-greeting">
         <div className="slogan">
           <img className= "logo-img" src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1505944279/logo_cpwpsb.png" />
           <h3>Helping you </h3>
