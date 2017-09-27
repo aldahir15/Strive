@@ -1,5 +1,5 @@
 class Api::CalendarsController < ApplicationController
-  before_action :require_login, :ensure_full_calendar
+  before_action :require_login, :ensure_full_calendar, :set_access_control_headers
 
   def ensure_full_calendar
     daysinyear = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]

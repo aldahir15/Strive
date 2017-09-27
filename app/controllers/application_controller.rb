@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
-  helper_method :current_user, :logged_in?, :require_login
+  helper_method :current_user, :logged_in?, :require_login, :set_access_control_headers
 
   def current_user
     @user ||= User.find_by_session_token(session[:session_token])
@@ -22,5 +22,9 @@ class ApplicationController < ActionController::Base
 
   def require_login
     redirect_to new_session_url unless logged_in?
+  end
+
+  def set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
   end
 end
