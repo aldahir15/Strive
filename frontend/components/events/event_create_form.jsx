@@ -1,15 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
+import EventMap from './EventMap';
 
 class EventCreate extends React.Component {
   constructor(props){
     super(props);
     this.handleDate = this.handleDate.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleMap = this.handleMap.bind(this);
     this.state = {title: "", description: "",
                   calendar_id: 0, image_url: "",
-                  day: 0, month: 0, year: 0};
+                  day: 0, month: 0, year: 0, lat: 0, lng: 0};
   }
 
   update(field){
@@ -42,7 +44,7 @@ class EventCreate extends React.Component {
     return(
       <div className="update-form">
         <h1>Create An Event</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="event-map-form">
           <label>Title:
             <input type="text" onChange={this.update("title")} value={this.state.title} />
           </label>
@@ -59,7 +61,7 @@ class EventCreate extends React.Component {
             <input type="text" onChange={this.update("image_url")} value={this.state.image_url} />
           </label>
 
-          <input className="submit-update" type="submit" value="Create Event" />
+          <EventMap currState={this.state} onClick={this.handleMap} createEvent={this.props.createEvent} />
         </form>
       </div>
     );

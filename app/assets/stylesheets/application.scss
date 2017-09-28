@@ -699,6 +699,14 @@ body {
   line-height: 40px;
 }
 
+.event-map-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  line-height: 40px;
+  width: 100% !important;
+}
+
 .form-container {
   display: flex;
   flex-direction: row;
@@ -1110,4 +1118,13 @@ body {
   display: flex;
   flex-flow: row;
   justify-content: space-evenly;
+}
+
+.map-container-2 {
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 70px;
 }

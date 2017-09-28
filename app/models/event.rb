@@ -13,6 +13,8 @@
 #  day         :integer
 #  month       :integer
 #  year        :integer
+#  lat         :float
+#  lng         :float
 #
 
 class Event < ApplicationRecord

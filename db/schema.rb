@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170928020140) do
+ActiveRecord::Schema.define(version: 20170928035509) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 20170928020140) do
     t.integer "day"
     t.integer "month"
     t.integer "year"
+    t.float "lat"
+    t.float "lng"
   end
 
   create_table "paths", force: :cascade do |t|

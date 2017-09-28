@@ -8,7 +8,6 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  arr_events       :integer          default([]), is an Array
 #
 
 class User < ApplicationRecord
