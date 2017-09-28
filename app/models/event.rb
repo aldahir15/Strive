@@ -29,4 +29,6 @@ class Event < ApplicationRecord
 
   belongs_to :calendar
 
+  has_many :user_events
+
 end

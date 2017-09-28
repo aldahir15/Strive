@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :paths, only: [:index, :create, :update, :destroy]
     resources :events, only: [:index, :create, :update, :show, :destroy]
     resources :quotes, only: [:show]
+    resources :user_events, only: [:create, :index]
   end
 end

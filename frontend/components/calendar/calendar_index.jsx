@@ -9,12 +9,13 @@ class CalendarIndex extends React.Component {
 
   componentDidMount(){
     this.props.fetchAllCalendars();
+    this.props.fetchUserEvents();
   }
 
   calendarView(){
-    console.log(this.props);
+    console.log("HEE", this.props.userEvents[6]);
     const date = new Date;
-    let offset = ((date.getDay() + 6 % 7) - 4);
+    let offset = ((date.getDay() + 6 % 7) - date.getDay() - 2);
     let newArr = [];
     const endingLastMonth = new Date(2017, date.getMonth(), 0).getDate();
     for (let i = 0; i < offset; i++) {
@@ -48,16 +49,14 @@ class CalendarIndex extends React.Component {
             {this.props.calendars[indx].day}
             <ul className="workouts-within">
               {this.props.calendars[indx].workouts.map((workout) =>
-            workout.title ? <li key={workout.id}><Link to={`workouts/${workout.id}`}>
-              {`${workout.time}${workout.dayornight}: ${workout.title}`}
-              </Link></li> : <div></div>)}
-              {Object.keys(this.props.user.events).map((eventIndx) =>
-                (this.props.user.events[eventIndx].day === indx ||
-                this.props.user.events[eventIndx].calendar_id ===
-                this.props.calendars[indx].id) ?
-                <li key={this.props.user.events[eventIndx].id}><Link to={`events/${this.props.user.events[eventIndx].id}`}>
-                  {`Event: ${this.props.user.events[eventIndx].title}`}
+              workout.title ? <li key={workout.id}><Link to={`workouts/${workout.id}`}>
+                {`${workout.time}${workout.dayornight}: ${workout.title}`}
                 </Link></li> : <div></div>)}
+              {Object.keys(this.props.userEvents).map((userEventIndx) =>
+                this.props.userEvents[userEventIndx].event.day == indx ?
+                <li key={this.props.userEvents[userEventIndx].event_id}><Link to={`events/${this.props.userEvents[userEventIndx].event_id}`}>
+                  {`Event: ${this.props.userEvents[userEventIndx].event.title}`}
+                  </Link></li> : <div></div>)}
             </ul>
             </li>)}
           </ul>

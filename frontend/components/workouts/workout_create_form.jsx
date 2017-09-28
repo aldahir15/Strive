@@ -48,6 +48,7 @@ class WorkoutCreateForm extends React.Component {
     return(
       <div className="update-form">
         <form onSubmit={this.handleSubmit}>
+          <h1>CREATE A WORKOUT</h1>
           <label>Title:
             <input type="text" onChange={this.update("title")} value={this.state.title} />
           </label>

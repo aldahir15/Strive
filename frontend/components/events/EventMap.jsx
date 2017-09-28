@@ -17,7 +17,6 @@ class GoogleMap extends React.Component {
 
   componentDidMount(){
     console.log("PROPS", this.props);
-    this.setState({title: this.props.currState.title});
     const directionsService = new google.maps.DirectionsService();
     const directionsDisplay = new google.maps.DirectionsRenderer();
     if (!this.props.workout) {
@@ -42,6 +41,10 @@ class GoogleMap extends React.Component {
         }
       });
       }
+  }
+
+  componentWillReceiveProps(newProps){
+    this.setState({title: newProps.currState.title});
   }
 
   addMarker(location, map){

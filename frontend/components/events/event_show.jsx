@@ -11,11 +11,15 @@ class EventShow extends React.Component {
 
   componentDidMount(){
     this.props.fetchEvents();
+    this.props.fetchUserEvents();
   }
 
   handleAdd(){
-    const user = {arr_events: this.props.match.params.eventId};
-    this.props.updateUser(this.props.user.id, user);
+    if (this.props.userEvents.includes(this.props.match.params.eventId)) {
+
+    } else {
+      this.props.createUserEvent({event_id: this.props.match.params.eventId});
+    }
   }
 
   renderInfo(){
@@ -27,7 +31,9 @@ class EventShow extends React.Component {
           <div className="event-title-plus">
             <h1>{event.title}</h1>
             <div>
-              <a className="event-plus-form" onClick={this.handleAdd}>Add To Calendar</a>
+              <a className={Object.keys(this.props.userEvents).includes(this.props.match.params.eventId) ? "shadow"  : "event-plus-form"}
+                onClick={this.handleAdd}>
+                {Object.keys(this.props.userEvents).includes(this.props.match.params.eventId) ? "Already in Calendar" : "Add To Calendar"}</a>
             </div>
           </div>
         </Parallax>

@@ -31,12 +31,14 @@ class Explore extends React.Component {
   pathList(){
     if (this.props.path) {
       return(
-        <ul>
-        {Object.keys(this.props.path).map((indx) =>
-          <li>
-            <MapModal path={this.props.path[indx]}/>
-          </li>)}
-          </ul>
+        <div className="routes-list">
+          <ul>
+          {Object.keys(this.props.path).map((indx) =>
+            <li>
+              <MapModal path={this.props.path[indx]}/>
+            </li>)}
+            </ul>
+          </div>
         );
     } else {
       return(<div></div>);

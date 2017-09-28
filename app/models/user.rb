@@ -54,4 +54,6 @@ class User < ApplicationRecord
     class_name: :Path
 
   has_many :events
+
+  has_many :user_events
 end
