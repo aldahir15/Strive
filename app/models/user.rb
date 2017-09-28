@@ -8,7 +8,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  event_ids       :integer          default([]), is an Array
+#  arr_events       :integer          default([]), is an Array
 #
 
 class User < ApplicationRecord
@@ -54,5 +54,5 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: :Path
 
-  has_many :events 
+  has_many :events
 end

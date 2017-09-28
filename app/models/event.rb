@@ -24,6 +24,7 @@ class Event < ApplicationRecord
   end
 
   belongs_to :user
+
   belongs_to :calendar
 
 end

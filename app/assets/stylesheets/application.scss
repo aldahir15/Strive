@@ -583,6 +583,7 @@ body {
   border: 1px solid grey;
   border-radius: 20px;
   box-shadow: 10px 10px 5px #888888;
+  padding-bottom: 90px;
 }
 
 .workout-form {
@@ -947,11 +948,17 @@ body {
   flex-direction: row;
   text-align: -webkit-center;
   justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: baseline;
+  padding-left: 15%;
 }
 
 .events-index li {
   display: flex;
   flex-direction: column;
+  padding-right: 200px;
+  padding-top: 25px;
 }
 
 .events-index h1 {

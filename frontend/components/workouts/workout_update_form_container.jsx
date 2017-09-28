@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import WorkoutUpdateForm from './workout_update_form';
 import { fetchWorkout, createWorkout, updateWorkout, deleteWorkout } from '../../actions/workout_actions';
+import { fetchAllCalendars } from '../../actions/calendar_actions';
 import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
@@ -8,8 +9,10 @@ const mapStateToProps = (state, ownProps) => {
   if (ownProps.match.params.workoutId) {
     workout = state.workout;
   }
+  const calendars = state.calendar;
   return {
-    workout
+    workout,
+    calendars
   };
 };
 

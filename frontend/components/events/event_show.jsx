@@ -14,7 +14,7 @@ class EventShow extends React.Component {
   }
 
   handleAdd(){
-    const user = {event_ids: this.props.match.params.eventId};
+    const user = {arr_events: this.props.match.params.eventId};
     this.props.updateUser(this.props.user.id, user);
   }
 

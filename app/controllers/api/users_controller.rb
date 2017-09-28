@@ -17,20 +17,20 @@ class Api::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    p "HELLLLLLLOOOOOOOO"
-    p params
-    @user.event_ids << params[:user][:event_ids].to_i
-    if @user.save
-      render "api/users/show"
-    else
-      @user.errors.full_messages
-      render json: @user.errors.full_messages, status: 422
-
-    end
+    # p "HELLLLLLLOOOOOOOO"
+    # p params
+    # @user.arr_events << params[:user][:arr_events].to_i
+    # if @user.save
+    #   render "api/users/show"
+    # else
+    #   @user.errors.full_messages
+    #   render json: @user.errors.full_messages, status: 422
+    #
+    # end
   end
 
   private
   def user_params
-    params.require(:user).permit(:username, :password, :event_ids)
+    params.require(:user).permit(:username, :password)
   end
 end

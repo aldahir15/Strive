@@ -6,7 +6,8 @@ class WorkoutUpdateForm extends React.Component {
   constructor(props){
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {title: "", description: "", calendar_id: 0, time: 0, dayornight: "", id: 0};
+    this.state = {title: "", description: "", calendar_id: 0,
+                  time: 9, dayornight: "AM"};
   }
 
   componentDidMount(){
@@ -16,7 +17,8 @@ class WorkoutUpdateForm extends React.Component {
                                     calendar_id: action.workout.calendar.id,
                                     time: action.workout.time,
                                     dayornight: action.workout.dayornight,
-                                    id: action.workout.id}));
+                                    id: action.workout.id,
+                                    }));
   }
 
   componentWillReceiveProps(nextProps){
@@ -35,6 +37,19 @@ class WorkoutUpdateForm extends React.Component {
     e.preventDefault();
     this.props.updateWorkout(this.state);
     location.reload();
+  }
+
+  pathOptions(){
+    if (this.props.paths) {
+      return(
+        Object.keys(this.props.paths).map((indx) =>
+        <option value={indx}>
+          {this.props.paths[indx].title} - {this.props.paths[indx].distance} mi
+        </option>)
+      );
+    } else {
+      return(<option></option>);
+    }
   }
 
   render(){

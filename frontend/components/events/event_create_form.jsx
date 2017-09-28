@@ -8,7 +8,8 @@ class EventCreate extends React.Component {
     this.handleDate = this.handleDate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {title: "", description: "",
-                  calendar_id: 0, image_url: ""};
+                  calendar_id: 0, image_url: "",
+                  day: 0, month: 0, year: 0};
   }
 
   update(field){
@@ -25,6 +26,7 @@ class EventCreate extends React.Component {
     const year = parseInt(e.target.value.slice(0,4));
     const month = parseInt(e.target.value.slice(5,7));
     const day = parseInt(e.target.value.slice(8,10));
+    this.setState({day, month, year});
     let calendarId;
     this.setState({calendar_id: this.props.calendars[day].id});
   }
