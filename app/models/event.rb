@@ -10,6 +10,9 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #  image_url   :string
+#  day         :integer
+#  month       :integer
+#  year        :integer
 #
 
 class Event < ApplicationRecord
@@ -22,4 +25,5 @@ class Event < ApplicationRecord
 
   belongs_to :user
   belongs_to :calendar
+
 end

@@ -51,9 +51,12 @@ class CalendarIndex extends React.Component {
             workout.title ? <li key={workout.id}><Link to={`workouts/${workout.id}`}>
               {`${workout.time}${workout.dayornight}: ${workout.title}`}
               </Link></li> : <div></div>)}
-              {this.props.calendars[indx].events.map((event) =>
-                event.title ? <li key={event.id}><Link to={`events/${event.id}`}>
-                  {`Event: ${event.title}`}
+              {Object.keys(this.props.user.events).map((eventIndx) =>
+                (this.props.user.events[eventIndx].day === indx ||
+                this.props.user.events[eventIndx].calendar_id ===
+                this.props.calendars[indx].id) ?
+                <li key={this.props.user.events[eventIndx].id}><Link to={`events/${this.props.user.events[eventIndx].id}`}>
+                  {`Event: ${this.props.user.events[eventIndx].title}`}
                 </Link></li> : <div></div>)}
             </ul>
             </li>)}

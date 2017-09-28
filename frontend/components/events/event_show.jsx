@@ -6,10 +6,16 @@ import { Parallax } from 'react-parallax';
 class EventShow extends React.Component {
   constructor(props){
     super(props);
+    this.handleAdd = this.handleAdd.bind(this);
   }
 
   componentDidMount(){
     this.props.fetchEvents();
+  }
+
+  handleAdd(){
+    const user = {event_ids: this.props.match.params.eventId};
+    this.props.updateUser(this.props.user.id, user);
   }
 
   renderInfo(){
@@ -18,7 +24,12 @@ class EventShow extends React.Component {
       return(
         <div className="event-show">
         <Parallax bgImage={event.image_url} strength={1900} className="event-parallax">
-        <h1>{event.title}</h1>
+          <div className="event-title-plus">
+            <h1>{event.title}</h1>
+            <div>
+              <a className="event-plus-form" onClick={this.handleAdd}>Add To Calendar</a>
+            </div>
+          </div>
         </Parallax>
         <div className="event-show-info">
         <h4>Description:</h4>

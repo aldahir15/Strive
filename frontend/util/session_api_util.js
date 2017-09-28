@@ -20,3 +20,11 @@ export const logout = () => {
     url: '/api/session'
   });
 };
+
+export const updateUser = (id,user) => {
+  return $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${id}`,
+    data: {user}
+  });
+};

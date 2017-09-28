@@ -7,6 +7,8 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  day        :integer
+#  month      :integer
+#  year       :integer
 #
 
 require 'test_helper'

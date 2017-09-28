@@ -28,6 +28,12 @@ export const logout = () => (dispatch) => (
   ))
 );
 
+export const updateUser = (id, data) => (dispatch) => (
+  SessionAPIUtil.updateUser(id, data).then(user => (
+    dispatch(receiveCurrentUser(user))
+  ))
+);
+
 export const receiveCurrentUser = currentUser => ({
   type: RECEIVE_CURRENT_USER,
   currentUser

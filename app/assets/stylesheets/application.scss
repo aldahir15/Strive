@@ -736,6 +736,30 @@ body {
   color: #fc4c02;
   border: 1px solid black;
 }
+
+.event-plus-form {
+  transition: all 0.25s;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 120%;
+  color: #fc4c02;
+  cursor: pointer;
+  border: 0;
+  margin-top: 15px;
+  position: relative;
+  top: 35px;
+}
+
+.event-plus-form:hover {
+  color: white;
+  background-color: #fc4c02;
+}
+
+.event-title-plus {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 // CALENDAR-INDEX
 
 .month {

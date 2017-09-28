@@ -74,12 +74,12 @@ class Calendar extends React.Component {
 
   render(){
     const day = new Date;
-    console.log(this.props.calendar);
-    let workoutAmt;
-    let eventAmt;
+    console.log(this.props);
+    let workoutAmt = '0 Workouts';
+    let eventAmt = '0 Events';
     if ( Object.keys(this.props.workouts).length > 1) {
        workoutAmt = `${Object.keys(this.props.workouts).length} Workouts`;
-       eventAmt = `${this.props.calendar[day.getDate()].user.event_ids.length} Events`;
+       eventAmt = `${this.props.user.events.length} Events`;
     }
     const Circle = ProgressBar.Circle;
     const options = {
@@ -96,7 +96,8 @@ class Calendar extends React.Component {
           position: 'relative',
           left: '5%'
       };
-    const progress = 1;
+    const workoutProgress = workoutAmt[0] === '0' ? 0.01 : 1;
+    const eventProgress = eventAmt[0] === '0' ? 0.01 : 1;
     return(
       <div className="home-container">
         <Parallax strength={400} className="home">
@@ -117,7 +118,7 @@ class Calendar extends React.Component {
             {this.renderQuote()}
             <div className="progress-div">
               <Circle
-                progress={progress}
+                progress={workoutProgress}
                 text={workoutAmt}
                 options={options}
                 initialAnimate={true}
@@ -125,7 +126,7 @@ class Calendar extends React.Component {
                 containerClassName={'.progressbar'}
               />
               <Circle
-                progress={progress}
+                progress={eventProgress}
                 text={eventAmt}
                 options={options}
                 initialAnimate={true}

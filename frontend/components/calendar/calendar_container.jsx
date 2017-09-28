@@ -18,6 +18,7 @@ const mapStateToProps = (state) => {
     quote,
     path,
     workouts,
+    user: state.session.currentUser,
     errors: state.errors.calendar
   };
 };

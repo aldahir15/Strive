@@ -5,7 +5,8 @@ import {withRouter} from 'react-router-dom';
 
 const mapStateToProps = (state) => {
   return {
-    calendars: state.calendar
+    calendars: state.calendar,
+    user: state.session.currentUser
   };
 };
 
