@@ -57,19 +57,19 @@ class Greeting extends React.Component {
         </div>
         <div className="first-picture-showcase">
           <p>1. BEGIN EXPLORING</p>
-          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,q_100,w_721/v1506382179/Screen_Shot_2017-09-25_at_4.28.42_PM_vief28.png"/>
+          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506648895/front-page-map_tkbflr.png"/>
         </div>
       </Parallax>
       <Parallax strength={400} className="parallax-show-1">
         <div className="second-picture-showcase">
           <p>2. LOG YOUR JOURNEY</p>
-          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_1742/v1506383036/Calendar_phjltr.png"/>
+          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/q_100/v1506648891/front-page-calendar_rzf7o9.png"/>
         </div>
       </Parallax>
       <Parallax strength={400} className="parallax-show-2">
         <div className="second-picture-showcase">
           <p>3. CONNECT WITH OTHERS</p>
-          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/c_scale,w_1722/v1506383388/Connect_qgskrz.png"/>
+          <img src="http://res.cloudinary.com/ddgt25kwb/image/upload/v1506648892/front-page-events_h9zmnc.png"/>
         </div>
       </Parallax>
     </div>);

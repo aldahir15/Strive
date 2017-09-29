@@ -164,6 +164,8 @@ body {
 .first-picture-showcase img {
   padding-top: 150px;
   padding-left: 50px;
+  width: 70%;
+  height: 70%;
 }
 
 .second-picture-showcase p {
@@ -313,6 +315,7 @@ body {
 
 .session-form {
   // width: 100%;
+  margin: 0 auto !important;
   display: flex;
   flex-direction: column;
   // padding: 0 80px;
@@ -327,7 +330,6 @@ body {
   background: rgba(0,0,0,0.5);
   border: 1px solid #666;
   color: #CCC;
-  margin: 6px 0;
   width: 94%;
   text-align: -webkit-center;
 }
