@@ -41,7 +41,6 @@ class EventCreate extends React.Component {
   }
 
   render(){
-    console.log("EVENT CREATE", this.state);
     return(
       <div className="update-form">
         <h1>Create An Event</h1>

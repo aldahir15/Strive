@@ -16,7 +16,6 @@ class GoogleMap extends React.Component {
   }
 
   componentDidMount(){
-    console.log("PROPS", this.props);
     const directionsService = new google.maps.DirectionsService();
     const directionsDisplay = new google.maps.DirectionsRenderer();
     if (!this.props.workout) {

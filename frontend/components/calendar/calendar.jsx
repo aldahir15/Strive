@@ -74,7 +74,6 @@ class Calendar extends React.Component {
 
   render(){
     const day = new Date;
-    console.log(this.props);
     let workoutAmt = 0;
     let eventAmt = 0;
     let pathAmt = 0;
