@@ -28,7 +28,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem "jquery-rails"
-gem 'annotate'
 gem 'seed_dump'
 
 
@@ -44,6 +43,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'pry-rails'
+  gem 'annotate'
 end
 
 group :development do
