@@ -544,7 +544,7 @@ body {
 .quote-div {
   position: relative;
   top: 70px;
-  left: 200px;
+  left: 12%;
 }
 
 .quote-div h1 {
@@ -869,6 +869,14 @@ body {
 }
 
 //Map
+
+.map-container-events {
+  padding-top: 10px;
+  margin: 0 auto;
+  height: 500px;
+  width: 100%;
+}
+
 .map-container {
   margin: 0 auto;
   height: 400px;
@@ -904,6 +912,14 @@ body {
   position: relative;
   top: -45px;
   margin-bottom: -45px;
+}
+
+.button-map-container-events{
+  flex-flow: column;
+  position: relative;
+  top: -45px;
+  margin-bottom: -45px;
+  padding-top: 40px;
 }
 
 .explore-div{
@@ -1147,6 +1163,7 @@ body {
 .quote-progress-div{
   display: flex;
   flex-flow: column;
+  text-align: -webkit-left;
 }
 
 .progressbar-text {
@@ -1157,7 +1174,6 @@ body {
   display: flex;
   flex-flow: row;
   flex-direction: column;
-  padding-left: 4%;
   padding-top: 10%;
 }
 

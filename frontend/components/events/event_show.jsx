@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import { Parallax } from 'react-parallax';
+import EventShowMap from './EventShowMap';
 
 class EventShow extends React.Component {
   constructor(props){
@@ -42,6 +43,7 @@ class EventShow extends React.Component {
         <p>{event.description}</p>
         <h4>Date: </h4>
         <p>{event.calendar.month}/{event.calendar.day}/{event.calendar.year}</p>
+        {event.lat ? <EventShowMap event={event}/> : <div></div>}
         </div>
         </div>
       );
