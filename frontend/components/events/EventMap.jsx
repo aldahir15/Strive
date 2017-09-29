@@ -33,11 +33,11 @@ class GoogleMap extends React.Component {
       google.maps.event.addListener(this.map, "click", (event) => {
         if (this.markers.length === 0) {
           this.addMarker(event.latLng, this.map);
-          this.setState({lat: event.latLng.lat(), lng: event.latLng.lng()});
+          this.props.parentSetState({lat: event.latLng.lat(), lng: event.latLng.lng()});
         } else {
           this.placeMarkersOnMap(null);
           this.addMarker(event.latLng, this.map);
-          this.setState({lat: event.latLng.lat(), lng: event.latLng.lng()});
+          this.props.parentSetState({lat: event.latLng.lat(), lng: event.latLng.lng()});
         }
       });
       }
@@ -90,7 +90,6 @@ class GoogleMap extends React.Component {
   }
 
   render(){
-    console.log("YO", this.state);
     return(
       <div className="button-map-container">
         {this.props.workout && !this.props.workout.path ?
@@ -98,7 +97,6 @@ class GoogleMap extends React.Component {
           <div className="map-container-2" ref="map">
           Map
         </div>}
-        <input className="submit-update" type="submit" value="Create Event" />
       </div>
     );
   }

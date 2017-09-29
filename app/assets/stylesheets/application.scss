@@ -628,6 +628,27 @@ body {
   font-weight: bolder;
 }
 
+.update-form-2 {
+  display: flex;
+  flex-direction: column;
+  // width: 100%;
+  // padding: 0 80px;
+  // // overflow: none;
+  text-align: center;
+  font-size: 14px;
+  min-height: 40px;
+  transition: all 0.1s linear;
+  -o-transition: all 0.1s linear;
+  -ms-transition: all 0.1s linear;
+  color: black;
+  width: 100%;
+  margin: 6px 0;
+  text-align: -webkit-center;
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 20px 0;
+}
+
 .update-form input, .update-form textarea {
   width: 95%;
 }
@@ -1135,7 +1156,14 @@ body {
 .progress-div {
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  flex-direction: column;
+  padding-left: 4%;
+  padding-top: 10%;
+}
+
+.progress-div h3 {
+  position: relative;
+  left: 12.5%;
 }
 
 .map-container-2 {

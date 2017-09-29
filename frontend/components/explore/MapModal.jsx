@@ -11,7 +11,8 @@ const customStyles = {
     bottom                : 'auto',
     marginRight           : '-50%',
     overflow              : 'none',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    display : 'flex'
   }
 };
 

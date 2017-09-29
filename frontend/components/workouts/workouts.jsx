@@ -19,6 +19,16 @@ class Workouts extends React.Component {
     this.props.fetchWorkout(this.props.match.params.workoutId);
   }
 
+  componentWillReceiveProps(newProps){
+    if (this.props.workout.id !== parseInt(newProps.match.params.workoutId)) {
+      this.props.fetchWorkout(newProps.match.params.workoutId);
+    }
+  }
+
+  componentWillUnmount(){
+
+  }
+
   deleteWorkout(){
     this.props.deleteWorkout(this.props.workout.id);
     this.props.history.push('/home');

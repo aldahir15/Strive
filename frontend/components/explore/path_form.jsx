@@ -29,7 +29,7 @@ class PathForm extends React.Component {
 
   render(){
     return(
-      <div className="update-form">
+      <div className="update-form-2">
         <form onSubmit={this.handleSubmit}>
           <label>Title:
             <input type="text" onChange={this.update("title")} />

@@ -5,7 +5,7 @@ import {fetchQuote} from '../../util/quote_api_util';
 import WorkoutCreateModal from '../workouts/WorkoutCreateModal';
 import WorkoutCreateFormContainer from '../workouts/workout_create_form_container';
 import { Parallax } from 'react-parallax';
-import ProgressBar from 'react-progressbar.js';
+
 
 class Calendar extends React.Component {
 
@@ -75,13 +75,14 @@ class Calendar extends React.Component {
   render(){
     const day = new Date;
     console.log(this.props);
-    let workoutAmt = '0 Workouts';
-    let eventAmt = '0 Events';
+    let workoutAmt = 0;
+    let eventAmt = 0;
+    let pathAmt = 0;
     if ( Object.keys(this.props.workouts).length > 1) {
-       workoutAmt = `${Object.keys(this.props.workouts).length} Workouts`;
-       eventAmt = `${this.props.user.events.length} Events`;
+       workoutAmt = Object.keys(this.props.workouts).length;
+       eventAmt = this.props.user.events.length;
+       pathAmt = Object.keys(this.props.path).length;
     }
-    const Circle = ProgressBar.Circle;
     const options = {
         strokeWidth: 5,
         color: '#fc4c02',
@@ -96,11 +97,29 @@ class Calendar extends React.Component {
           position: 'relative',
           left: '5%'
       };
-    const workoutProgress = workoutAmt[0] === '0' ? 0.01 : 1;
-    const eventProgress = eventAmt[0] === '0' ? 0.01 : 1;
+    const {
+        // main component
+        Chart,
+        // graphs
+        Bars, Cloud, Dots, Labels, Lines, Pies, RadialLines, Ticks, Title,
+        // wrappers
+        Layer, Animate, Transform, Handlers,
+        // helpers
+        helpers, DropShadow, Gradient
+      } = require('rumble-charts');
+      const series = [{
+        name: 'Workouts Created',
+        data: [0,0,0]
+      }, {
+        name: 'Events Created',
+        data: [workoutAmt,eventAmt,pathAmt]
+      }, {
+        name: 'Paths Created',
+        data: [0,0,0]
+      }];
     return(
       <div className="home-container">
-        <Parallax strength={400} className="home">
+        <div className="home">
           <div className="day-calendar-container">
             <h1 className="day-of-week">{this.dayOfWeek().toUpperCase()}</h1>
             <div className="home-calendar">
@@ -117,25 +136,32 @@ class Calendar extends React.Component {
           <div className="quote-progress-div">
             {this.renderQuote()}
             <div className="progress-div">
-              <Circle
-                progress={workoutProgress}
-                text={workoutAmt}
-                options={options}
-                initialAnimate={true}
-                containerStyle={containerStyle}
-                containerClassName={'.progressbar'}
-              />
-              <Circle
-                progress={eventProgress}
-                text={eventAmt}
-                options={options}
-                initialAnimate={true}
-                containerStyle={containerStyle}
-                containerClassName={'.progressbar'}
-              />
+            <h3>Track your progress:</h3>
+            <Chart width={900} height={500} series={series} minY={0}>
+              <Layer width='80%' height='90%' position='top center'>
+                <Ticks
+                  axis='y'
+                  lineLength='100%'
+                  lineVisible={true}
+                  lineStyle={{stroke:'lightgray'}}
+                  labelStyle={{textAnchor:'end',dominantBaseline:'middle',fill:'lightgray'}}
+                  labelAttributes={{x: -5}}
+                />
+                <Ticks
+                  axis='x'
+                  label={({index, props}) => props.series[index].name}
+                  labelStyle={{textAnchor:'middle',dominantBaseline:'text-before-edge',fill:'lightgray'}}
+                  labelAttributes={{y: 3}}
+                />
+                <Bars
+                  groupPadding='3%'
+                  innerPadding='0.5%'
+                />
+              </Layer>
+            </Chart>
             </div>
           </div>
-        </Parallax>
+        </div>
       </div>
     );
   }
