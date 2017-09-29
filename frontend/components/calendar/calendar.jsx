@@ -144,13 +144,13 @@ class Calendar extends React.Component {
                   lineLength='100%'
                   lineVisible={true}
                   lineStyle={{stroke:'lightgray'}}
-                  labelStyle={{textAnchor:'end',dominantBaseline:'middle',fill:'lightgray'}}
+                  labelStyle={{textAnchor:'end',dominantBaseline:'middle',fill:'black'}}
                   labelAttributes={{x: -5}}
                 />
                 <Ticks
                   axis='x'
                   label={({index, props}) => props.series[index].name}
-                  labelStyle={{textAnchor:'middle',dominantBaseline:'text-before-edge',fill:'lightgray'}}
+                  labelStyle={{textAnchor:'middle',dominantBaseline:'text-before-edge',fill:'black'}}
                   labelAttributes={{y: 3}}
                 />
                 <Bars
