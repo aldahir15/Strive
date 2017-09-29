@@ -73,6 +73,7 @@ class WorkoutCreateForm extends React.Component {
 
           <label>Path:
             <select onChange={this.update("path_id")}>
+              <option selected>--NO PATH (PATHS BELOW)--</option>
               {this.pathOptions()}
             </select>
           </label>
