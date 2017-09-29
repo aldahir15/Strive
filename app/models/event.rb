@@ -22,7 +22,9 @@ class Event < ApplicationRecord
   after_initialize :ensure_image_url
 
   def ensure_image_url
-    self.image_url ||= "http://res.cloudinary.com/ddgt25kwb/image/upload/e_blackwhite,q_100/v1505944279/logo_cpwpsb.png"
+    if self.image_url == nil || self.image_url == ""
+      self.image_url = "http://res.cloudinary.com/ddgt25kwb/image/upload/e_blackwhite,q_100/v1505944279/logo_cpwpsb.png"
+    end
   end
 
   belongs_to :user

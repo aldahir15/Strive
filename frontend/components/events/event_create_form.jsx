@@ -61,9 +61,9 @@ class EventCreate extends React.Component {
             <input type="text" onChange={this.update("image_url")} value={this.state.image_url} />
           </label>
 
-          <input className="submit-update" type="submit" value="Create Event" />
 
           <EventMap currState={this.state} onClick={this.handleMap} parentSetState={this.setState} />
+          <input className="submit-update" type="submit" value="Create Event" />
         </form>
       </div>
     );
