@@ -64,16 +64,18 @@ class WorkoutUpdateForm extends React.Component {
             <textarea onChange={this.update("description")} value={this.state.description} />
           </label>
 
-          <label><p>Time:</p>
-            <input type="number" onChange={this.update("time")} value={this.state.time} />
-            <select onChange={this.update("dayornight")}>
-              <option value="AM" >AM</option>
-              <option value="PM" >PM</option>
-            </select>
+          <label>Time:
+            <div className="time-select">
+              <input type="number" onChange={this.update("time")} value={this.state.time} />
+              <select onChange={this.update("dayornight")}>
+                <option value="AM" >AM</option>
+                <option value="PM" >PM</option>
+              </select>
+            </div>
           </label>
 
 
-          <input type="submit" value="Update Workout" />
+          <input type="submit" className="submit-update" value="Update Workout" />
         </form>
       </div>
     );

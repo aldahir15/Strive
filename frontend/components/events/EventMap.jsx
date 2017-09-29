@@ -90,7 +90,7 @@ class GoogleMap extends React.Component {
 
   render(){
     return(
-      <div className="button-map-container">
+      <div className="button-map-container-2">
         {this.props.workout && !this.props.workout.path ?
         <div></div> :
           <div className="map-container-2" ref="map">

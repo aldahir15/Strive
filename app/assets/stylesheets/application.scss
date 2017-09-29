@@ -655,7 +655,7 @@ body {
   width: 95%;
 }
 
-.submit-create, .submit-update {
+.submit-create, .submit-update, .submit-update-2 {
   border-style: outset;
   transition: all 0.25s;
   border-radius: 5px;
@@ -671,9 +671,13 @@ body {
   padding-right: 14px;
 }
 
-.submit-create:hover, .submit-update:hover {
+.submit-create:hover, .submit-update:hover, .submit-update-2:hover {
   background-color: white;
   color: #fc4d02;
+}
+
+.submit-update-2 {
+  margin-top: 60px !important;
 }
 
 .update-form select {
@@ -971,6 +975,16 @@ body {
   flex: 3;
 }
 
+.button-map-container-2 {
+  flex-flow: column;
+  position: relative;
+  top: 0;
+  margin-bottom: -45px;
+  width: 100%;
+  display: flex;
+  flex: 3;
+}
+
 
 .button-map-container button {
   height: 40px;
@@ -1187,11 +1201,11 @@ body {
 
 .map-container-2 {
   margin: 0 auto;
-  height: 300px;
+  height: 240px;
   width: 100%;
   position: relative;
   overflow: hidden;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 
 .progress-div svg {

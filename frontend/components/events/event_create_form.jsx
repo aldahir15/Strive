@@ -63,7 +63,7 @@ class EventCreate extends React.Component {
 
 
           <EventMap currState={this.state} onClick={this.handleMap} parentSetState={this.setState} />
-          <input className="submit-update" type="submit" value="Create Event" />
+          <input className="submit-update-2" type="submit" value="Create Event" />
         </form>
       </div>
     );

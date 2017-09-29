@@ -77,10 +77,14 @@ class Calendar extends React.Component {
     let workoutAmt = 0;
     let eventAmt = 0;
     let pathAmt = 0;
-    if ( Object.keys(this.props.workouts).length > 1) {
+    if ( Object.keys(this.props.workouts).length >= 1) {
        workoutAmt = Object.keys(this.props.workouts).length;
-       eventAmt = this.props.user.events.length;
-       pathAmt = Object.keys(this.props.path).length;
+    }
+    if (this.props.user.events.length >= 1) {
+      eventAmt = this.props.user.events.length;
+    }
+    if (Object.keys(this.props.path).length >= 1) {
+      pathAmt = Object.keys(this.props.path).length;
     }
     const options = {
         strokeWidth: 5,
