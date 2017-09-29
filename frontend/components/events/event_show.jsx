@@ -20,6 +20,7 @@ class EventShow extends React.Component {
 
     } else {
       this.props.createUserEvent({event_id: this.props.match.params.eventId});
+      location.reload();
     }
   }
 
