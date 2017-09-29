@@ -8,11 +8,11 @@ This is my Strava clone built using Ruby on Rails for backend with PostgreSQL fo
 
 ## Table of contents
 
-- [Authentication](#Authentication)
-- [Calendar](#Calendar)
-- [Workouts](#Workouts)
-- [Paths](#Paths)
-- [Events](#Events)
+- [Authentication](#authentication)
+- [Calendar](#calendar)
+- [Workouts](#workouts)
+- [Paths](#paths)
+- [Events](#events)
 
 
 ## Authentication
