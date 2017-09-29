@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
 import MarkerUtil from '../../util/marker_util';
+import {deletePath} from '../../actions/path_actions';
 
 class GoogleMap extends React.Component {
 
   constructor(props){
     super(props);
+    this.handleClick = this.handleClick.bind(this);
     this.state = {title: "", startingPos: {lat: 0, lng: 0},
                   endingPos: {lat: 0, lng: 0}, distance: 0};
   }
@@ -39,6 +41,10 @@ class GoogleMap extends React.Component {
         }
       directionsDisplay.setMap(this.map);
       });
+  }
+
+  handleClick(){
+    deletePath(this.props.workout.id,this.props.workout.path.id);
   }
 
   render(){
