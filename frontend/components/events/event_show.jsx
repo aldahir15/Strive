@@ -16,7 +16,7 @@ class EventShow extends React.Component {
   }
 
   handleAdd(){
-    if (this.props.userEvents.includes(this.props.match.params.eventId)) {
+    if (Object.keys(this.props.userEvents).includes(this.props.match.params.eventId)) {
 
     } else {
       this.props.createUserEvent({event_id: this.props.match.params.eventId});
