@@ -1,5 +1,5 @@
 class ChangeNameOfArr < ActiveRecord::Migration[5.1]
   def change
-    rename_column :users, :arr_events, :arr_events
+    rename_column :users, :event_ids, :arr_events
   end
 end
